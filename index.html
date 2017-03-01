@@ -327,17 +327,7 @@
       
         
           
-            <h3>获得一张没有经过渲染的图片</h3>
-
-<pre><code>@implementation UIImage(image)
-  + (instancetype)imageOriginalWithName:(NSString *)imageName
-  {
-     UIImage *image = [UIImage imageNamed:imageName];
-     return [image
-     imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-  } 
-  @end
-</code></pre><h3>获得一张圆角图片</h3>
+            <h3>获得一张没有经过渲染的图片</h3><br>    @implementation UIImage(image)<br>      + (instancetype)imageOriginalWithName:(NSString <em>)imageName<br>      {<br>         UIImage </em>image = [UIImage imageNamed:imageName];<br>         return [image<br>         imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];<br>      }<br>      @end<br><br><br><h3>获得一张圆角图片</h3>
 
 <pre><code>@implementation UIImage(image)
 - (instancetype)abc_circleImage
