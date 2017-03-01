@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[UIImage分类]]></title>
+      <url>%2F2017%2F03%2F01%2FUIImage%E5%88%86%E7%B1%BB%2F</url>
+      <content type="text"><![CDATA[获得一张没有经过渲染的图片 @implementation UIImage(image) + (instancetype)imageOriginalWithName:(NSString )imageName { UIImage image = [UIImage imageNamed:imageName]; return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; } @end获得一张圆角图片 @implementation UIImage(image) - (instancetype)abc_circleImage { // 1.开启图形上下文 // 比例因素:当前点与像素比例 UIGraphicsBeginImageContextWithOptions(self.size, NO, 0); // 2.描述裁剪区域 UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, self.size.width, self.size.height)]; // 3.设置裁剪区域; [path addClip]; // 4.画图片 [self drawAtPoint:CGPointZero]; // 5.取出图片 UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); // 6.关闭上下文 UIGraphicsEndImageContext(); return image; } 类方法 + (instancetype)abc_circleImageNamed:(NSString *)name { return [[self imageNamed:name] abc_circleImage]; } @end]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[青花瓷]]></title>
+      <url>%2F2017%2F03%2F01%2F%E9%9D%92%E8%8A%B1%E7%93%B7%2F</url>
+      <content type="text"><![CDATA[读唐巧 iOS开发进阶的笔记: Chales通过将自己设置成系统的网络访问代理服务器，使得所有的网络访问请求都通过它来完成，从而实现了网络封包的截取和分析。Charles主要的功能包括： 1.支持SSL代理。可以截取分析SSL的请求 2.支持流量控制。可以模拟慢速网络，以及等待时间较长的请求。 3.可以自动将JSON或XML数据格式化,方便查看 4.支持重发网络请求，方便后台调试 5.支持修改网路请求参数 6.支持AMF调试 7.支持网络请求的截获和动态修改 查看HTML、CSS和RSS内容是否符合W3C标准 将Charles设置成系统代理 界面 Charles主要提供两种抓包的视图，分别为”Structure”和”Sequence”: Structure 视图将网络请求按访问的域名分类 2.Sequence视图将网络请求按访问的时间排序 过滤网络请求我们需要对网络请求进行过滤，只监控向指定目录服务器上发送的请求。设置的方法有两种： 1.在主界面的中部的Filter栏中填入需要过滤出来的关键字。 2.在Charles的菜单栏选择 “Proxy” -》 “Recording Settings”，然后选择Include添加。以此对应着协议、主机地址、端口使用Charles协助iOS开发截取iPhone上的网络封包Charles上的设置 Charles的菜单栏上选择 “Proxy” -&gt; “Proxy Settings”,填入代理端口8888，并且勾选”Enable transparent HTTP proxying”iPhone 上的设置首先需要获取Charles运行所在电脑的IP地址，打开Terminal,输入ifconfig en0,即可获得电脑的IP地址在iPhone的”设置” -&gt; “无线局域网”中，点击当前连接WiFi右边的详情按钮，滑动到底部，在HTTP代理中选择手动，填入Charles运行所在的电脑的IP地址，以及端口号8888这样就完成了设置。模拟慢速网络在Charles的菜单上，选择”Proxy” -&gt; “Throttle Setting”项，在弹出的对话框中，勾选上”Enable Throttling”,并且可以设置Throttle Preset的类型高级功能 修改网络请求内容有些时候为了调试服务器的接口，我们需要反复尝试不同参数的网络请求，Charles可以方便提供网络请求的修改和重发功能，只需要在以往请求上点击右键，选择”Edit”,就可以创建一个可编辑的网络请求 现在就可以更改所请求的任何信息，包括URL地址，端口，参数等，之后点击”Execute”就可以发送修改后的网络请求 修改服务器返回内容有时候我们想让服务器返回一些指定的内容，方便我们在一些特殊的情况下的调试，例如列表界面为空的情况，数据异常的情况，或部分耗时的网络请求超时的情况等，如果没有Charles，要服务器配合构造相应的数据就显得比较麻烦。根据具体的需求，Charles提供了Map功能，Rewrite功能和Breakpoint功能，它们可以达到修改服务器返回内容的目的。这三者在功能上的差异是： 1.Map功能适合长期地将某一些请求重定向到另一个网络地址或本地文件 2.Rewrite功能适合对网络请求进行一些正则的替换 3.Breakpoints功能适合做一些临时性的修改 Map功能Charles的Map功能分Map Remote和Map Local两种，顾名思义，Map Remote是将制定的网络请求重定向到另一个网址，Map Local是将制定的网络请求重定向到本地文件 在Charles的菜单中，选择”Tools” -&gt; “Map Remote” 或 “Map Local”即可以进入相应功能的设置界面，如图： 对于Map Remote，需要分别填写网络重定向的源地址和目标地址，对于不需要限制的条件，可以留空。 对于Map Local功能，我们需要填写重定向的源网址和本地的目标文件，对于一些复杂的网络请求结果，我们可以先使用Charles提供的”Save Response…”功能，将请求结果保存到本地，然后稍作修改作为我们的目标映射文件。 比如像下面这样，将一个指定的网络请求通过Map Local功能映射到本地的一个经过修改的文件中 Rewrite 功能Rewrite 功能适合对某一个类网络请求进行一些正则替换，以达到修改结果的目的。例如，修改客户端一个API请求获得的用户昵称 Breakpoint 功能上面提供的Rewrite功能最适合做批量和长期的替换，但是很多时候，我们只是临时修改一次网络请求的结果，使用Rewrite功能虽然也能达到目的，但是过于麻烦，对于临时性的修改，我们最好使用Breakpoint。Breakpoint功能类似于我们在Xcode中设置的断点，当指定的网络请求发生时，Charles会截获该请求，这个时候，我们可以在Charles中临时修改网络请求的返回内容。 可以选择以什么内容做截取，可以做各种具体的设置]]></content>
+    </entry>
+
+    
+  
+  
+</search>
