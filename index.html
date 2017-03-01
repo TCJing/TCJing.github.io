@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/Cocoapods的安装使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/UIImage分类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="颠倒">
@@ -272,7 +272,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/01/Cocoapods的安装使用/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/01/UIImage分类/" itemprop="url">
                   Cocoapods的安装使用
                 </a>
               
@@ -327,7 +327,7 @@
       
         
           
-            <h3>1.获得一张没有经过渲染的图片</h3><br>     @implementation UIImage(image)<br>     + (instancetype)imageOriginalWithName:(NSString <em>)imageName<br>     {<br>       UIImage </em>image = [UIImage imageNamed:imageName];<br>       return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];<br>    }<br>    @end<br><br><br><h3>2.获得一张圆角图片</h3>
+            <h3>获得一张没有经过渲染的图片</h3><br>    @implementation UIImage(image)<br>      + (instancetype)imageOriginalWithName:(NSString <em>)imageName<br>      {<br>         UIImage </em>image = [UIImage imageNamed:imageName];<br>         return [image<br>         imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];<br>      }<br>      @end<br><br><br><h3>获得一张圆角图片</h3>
 
 <pre><code>@implementation UIImage(image)
 - (instancetype)abc_circleImage
