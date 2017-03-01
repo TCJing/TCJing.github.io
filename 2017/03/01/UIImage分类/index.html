@@ -87,16 +87,37 @@
 
 
 
-<meta name="description" content="获得一张没有经过渲染的图片    @implementation UIImage(image)      + (instancetype)imageOriginalWithName:(NSString )imageName      {         UIImage image = [UIImage imageNamed:imageName];         return [image">
+<meta name="description" content="获得一张没有经过渲染的图片
+
+@implementation UIImage(image)
+  + (instancetype)imageOriginalWithName:(NSString *)imageName
+  {
+     UIImage *image = [UIImage imageNamed:imageName];
+     return [image
+     imageWithR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIImage分类">
 <meta property="og:url" content="http://yoursite.com/2017/03/01/UIImage分类/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="获得一张没有经过渲染的图片    @implementation UIImage(image)      + (instancetype)imageOriginalWithName:(NSString )imageName      {         UIImage image = [UIImage imageNamed:imageName];         return [image">
-<meta property="og:updated_time" content="2017-03-01T09:31:38.000Z">
+<meta property="og:description" content="获得一张没有经过渲染的图片
+
+@implementation UIImage(image)
+  + (instancetype)imageOriginalWithName:(NSString *)imageName
+  {
+     UIImage *image = [UIImage imageNamed:imageName];
+     return [image
+     imageWithR">
+<meta property="og:updated_time" content="2017-03-01T09:34:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIImage分类">
-<meta name="twitter:description" content="获得一张没有经过渲染的图片    @implementation UIImage(image)      + (instancetype)imageOriginalWithName:(NSString )imageName      {         UIImage image = [UIImage imageNamed:imageName];         return [image">
+<meta name="twitter:description" content="获得一张没有经过渲染的图片
+
+@implementation UIImage(image)
+  + (instancetype)imageOriginalWithName:(NSString *)imageName
+  {
+     UIImage *image = [UIImage imageNamed:imageName];
+     return [image
+     imageWithR">
 
 
 
@@ -321,7 +342,17 @@
       
 
       
-        <h3>获得一张没有经过渲染的图片</h3><br>    @implementation UIImage(image)<br>      + (instancetype)imageOriginalWithName:(NSString <em>)imageName<br>      {<br>         UIImage </em>image = [UIImage imageNamed:imageName];<br>         return [image<br>         imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];<br>      }<br>      @end<br><br><br><h3>获得一张圆角图片</h3>
+        <h3>获得一张没有经过渲染的图片</h3>
+
+<pre><code>@implementation UIImage(image)
+  + (instancetype)imageOriginalWithName:(NSString *)imageName
+  {
+     UIImage *image = [UIImage imageNamed:imageName];
+     return [image
+     imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+  } 
+  @end
+</code></pre><h3>获得一张圆角图片</h3>
 
 <pre><code>@implementation UIImage(image)
 - (instancetype)abc_circleImage
