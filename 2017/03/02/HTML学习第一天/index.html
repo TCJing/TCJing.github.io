@@ -118,10 +118,14 @@ CSS3亮点: 设计动画 2D变形
 
 HT">
 <meta property="og:image" content="http://yoursite.com/abc.jpg">
+<meta property="og:image" content="http://yoursite.com/abc.jpg">
+<meta property="og:image" content="http://yoursite.com/image/IMG_0084.png">
 <meta property="og:image" content="http://yoursite.com/image/IMG_0084.png">
 <meta property="og:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
 <meta property="og:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
-<meta property="og:updated_time" content="2017-03-02T10:38:25.000Z">
+<meta property="og:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
+<meta property="og:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
+<meta property="og:updated_time" content="2017-03-02T10:44:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习第一天">
 <meta name="twitter:description" content="2014年制定完HTML5标准利用HTML5编写的UI能够运行在所有的浏览器的平台
@@ -456,25 +460,38 @@ HT">
 <p><a href="http://w3school.com.cn/" target="_blank" rel="external">W3school</a></p>
 </li>
 </ul>
-<p>HTML： 超文本标记语言 浏览器负责将它解析成具体的网页内容，HTML语言是松散的<br>  <hr><br>WebStorm的使用：</p>
+<p>HTML： 超文本标记语言 浏览器负责将它解析成具体的网页内容，HTML语言是松散的<br>WebStorm的使用：</p>
 <ul>
 <li>注释快捷键：command + /</li>
-<li><p>线条：”hr”          </p>
-<p>输入：</p>
-<p> “input placeholder=”我是占位文字””<br><input placeholder="我是占位文字"><br>   “input value=”我是默认的文字””<br><input value="我是默认的文字"></p>
-<pre><code>&quot;input type=&quot;date&quot;&quot;
-</code></pre><p><input type="date"></p>
-<pre><code>&quot;input type=&quot;file&quot;&quot;
-</code></pre><p><input type="file"><br> “input type=”color””<br><input type="color"><br> “input type=”radio”””<br><input type="radio"><br> “input type=”checkbox””<br><input type="checkbox"><br>图片标签<br>alt: 图片显示失败的时候，显示的文字提示<br> “img src=”abc.jpg” alt=”这是一张图片””<br><img src="abc.jpg" alt="这是一张图片"><br>&lt;!—相对路径–&gt;<br> “img src=”image/IMG_0084.png””<br><img src="image/IMG_0084.png"></p>
+<li><p>线条：<br> <del>~ \<hr></del>~<br>输入：</p>
+<p> <code>&lt;input placeholder=&quot;我是占位文字&quot;&gt;</code></p>
+<p><input placeholder="我是占位文字"><br><hr><br>   \<input value="我是默认的文字"><br><input value="我是默认的文字"><br><hr>  </p>
+<pre><code>\&lt;input type=&quot;date&quot;&gt;
+</code></pre><p><input type="date"><br><hr></p>
+<pre><code>\&lt;input type=&quot;file&quot;&gt;
+</code></pre><p><input type="file"><br><hr><br> \<input type="color"><br><input type="color"><br><hr><br> \<input type="radio"><br><input type="radio"><br><hr><br> \<input type="checkbox"><br><input type="checkbox"><br>图片标签<br>alt: 图片显示失败的时候，显示的文字提示<br> \<img src="abc.jpg" alt="这是一张图片"><br><img src="abc.jpg" alt="这是一张图片"><br>&lt;!—相对路径–&gt;<br> \<img src="image/IMG_0084.png"><br><img src="image/IMG_0084.png"></p>
 </li>
 </ul>
-<p>&lt;!—绝对路径 固定了宽，高会按比例自动缩放—&gt;<br>    “img src=”<a href="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" target="_blank" rel="external">https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png</a>“ width=”100”””<br> <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="100"></p>
-<p>&lt;!—绝对路径 设置宽与父元素的比例，这样能更好的适配，相对于设置固定的宽度—&gt;<br>       “img src=”<a href="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/" target="_blank" rel="external">https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/</a>“<br><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="50%"></p>
-<p>换行标签<br>   “br”</p>
-<p>列表标签<br>    <ul><br>        <li>无序列表</li><br>        <li>无序列表</li><br>        <li>无序列表</li><br>        <li>无序列表</li><br>        <li>无序列表</li><br>        <li>无序列表</li><br>    </ul> </p>
-<p><ul><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br> </ul><br>    <ol type=""><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>    </ol></p>
-<p><ol type=""><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br> </ol><br> <hr><br>   <strong>超链接</strong><br>    “a target=”_self” href=”https:baidu.com””我是超链接”/a&gt;”<br>  <a target="_self" href="https:baidu.com">我是超链接</a><br>    <!--跳转到新的窗口--><br>    “a target=”_blank” href=”https:baidu.com””我是超链接”/a”<br>  <a target="_blank" href="https:baidu.com">我是超链接</a><br>    <!--回到顶部--><br>    “a target=”_top” href=”#”&gt;回到顶部”/a””/code””<br>   <a target="_top" href="#">回到顶部</a><br>    “meter value=”30” max=”100” min=”0””30%”/meter”<br>   <meter value="30" max="100" min="0">30%</meter><br>    “progress value=”40” max=”100”””/progress”</p>
-<progress value="40" max="100"></progress>
+<p>&lt;!—绝对路径 固定了宽，高会按比例自动缩放—&gt;<br>    \<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="100"><br> <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="100"></p>
+<p>&lt;!—绝对路径 设置宽与父元素的比例，这样能更好的适配，相对于设置固定的宽度—&gt;<br>       \<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="50%"><br><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" width="50%"></p>
+<p>换行标签<br>   \<br></p>
+<p>列表标签</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;无序列表&lt;/li&gt;
+    &lt;li&gt;无序列表&lt;/li&gt;
+    &lt;li&gt;无序列表&lt;/li&gt;
+    &lt;li&gt;无序列表&lt;/li&gt;
+    &lt;li&gt;无序列表&lt;/li&gt;
+    &lt;li&gt;无序列表&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p><ul><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br>    <li>无序列表</li><br> </ul><br>    <!--有序列表--><br>    <ol type=""><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>    </ol></p>
+<p><ol type=""><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br>        <li>有序列表</li><br> </ol><br> <hr><br>   <strong>超链接</strong></p>
+<p>\&lt;!—超链接标签–&gt;<br>\&lt;!—当前的窗口跳转–&gt;<br>    \<a target="_self" href="https:baidu.com">我是超链接</a><br>  <a target="_self" href="https:baidu.com">我是超链接</a></p>
+<p><hr><br>    <!--跳转到新的窗口--><br>    \<a target="_blank" href="https:baidu.com">我是超链接</a><br>  <a target="_blank" href="https:baidu.com">我是超链接</a></p>
+<p><hr><br>    <!--回到顶部--><br>    \<a target="_top" href="#">回到顶部</a><br>   <a target="_top" href="#">回到顶部</a></p>
+<p><hr><br>    \<meter value="30" max="100" min="0">30%</meter><br>   <meter value="30" max="100" min="0">30%</meter><br>    \<progress value="40" max="100"></progress></p>
+<p><progress value="40" max="100"></progress></p>
+<hr>
       
     </div>
 
