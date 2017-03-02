@@ -88,45 +88,54 @@
 
 
 <meta name="description" content="UIWindow更多的时候只作为UIView的顶层容器存在
-####UIWindow的主要作用有：
+UIWindow的主要作用有：
+
 
 作为UIView的最顶层容器，包含应用所需要的所有的UIView
 传递触摸消息和键盘事件给UIView
 
-####为UIWindow增加UIView
+为UIWindow增加UIView
+
+
 
 因为其本身是UIView的子类，所以可以调用addSubView方法
 
-通过设置其特有的rootViewController属性。 通过设置其属性">
+通过设置其特有的rootViewController属性。 通过设置其属性添加vie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIWindow笔记">
 <meta property="og:url" content="http://yoursite.com/2017/03/02/UIWindow笔记/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
 <meta property="og:description" content="UIWindow更多的时候只作为UIView的顶层容器存在
-####UIWindow的主要作用有：
+UIWindow的主要作用有：
+
 
 作为UIView的最顶层容器，包含应用所需要的所有的UIView
 传递触摸消息和键盘事件给UIView
 
-####为UIWindow增加UIView
+为UIWindow增加UIView
+
+
 
 因为其本身是UIView的子类，所以可以调用addSubView方法
 
-通过设置其特有的rootViewController属性。 通过设置其属性">
-<meta property="og:updated_time" content="2017-03-02T06:21:02.000Z">
+通过设置其特有的rootViewController属性。 通过设置其属性添加vie">
+<meta property="og:updated_time" content="2017-03-02T06:25:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIWindow笔记">
 <meta name="twitter:description" content="UIWindow更多的时候只作为UIView的顶层容器存在
-####UIWindow的主要作用有：
+UIWindow的主要作用有：
+
 
 作为UIView的最顶层容器，包含应用所需要的所有的UIView
 传递触摸消息和键盘事件给UIView
 
-####为UIWindow增加UIView
+为UIWindow增加UIView
+
+
 
 因为其本身是UIView的子类，所以可以调用addSubView方法
 
-通过设置其特有的rootViewController属性。 通过设置其属性">
+通过设置其特有的rootViewController属性。 通过设置其属性添加vie">
 
 
 
@@ -426,21 +435,27 @@
 
       
         <p>UIWindow更多的时候只作为UIView的顶层容器存在</p>
-<p>####UIWindow的主要作用有：</p>
+<h3>UIWindow的主要作用有：</h3>
+
 <ul>
 <li>作为UIView的最顶层容器，包含应用所需要的所有的UIView</li>
 <li>传递触摸消息和键盘事件给UIView</li>
 </ul>
-<p>####为UIWindow增加UIView</p>
+<h3>为UIWindow增加UIView</h3>
+
+
 <ul>
 <li><p>因为其本身是UIView的子类，所以可以调用addSubView方法</p>
 </li>
 <li><p>通过设置其特有的rootViewController属性。 通过设置其属性添加view对应的UIViewController，UIWindow自动将其view添加到当前window中。同时负责维护ViewController和view的生命周期。</p>
 </li>
 </ul>
-<p>####系统对UIWindow的使用</p>
+<h3>系统对UIWindow的使用</h3>
+
 <p>调用系统的控件时(UIAlertView)，iOS系统为了保证UIAlertView在所有的界面之上，它会临时创建一个新的UIWindow，通过将其UIWindow的UIWindowLevel设置得更高，让UIAlertView盖在所有的应用界面之上</p>
-<p>####WindowLevel</p>
+<h3>WindowLevel</h3>
+
+
 <p>UIWindow的UIWindowLevel属性，定义了UIWindow的层级</p>
 <pre><code>UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;
 UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;
@@ -449,7 +464,9 @@ UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar
 <pre><code>NSLog(@&quot;UIWindowLevelAlert - %lf ,UIWindowLevelNormal %lf, UIWindowLevelStatusBar %lf&quot;,UIWindowLevelAlert,UIWindowLevelNormal,UIWindowLevelStatusBar);
 </code></pre><p>输出的结果为：<br>     UIWindowLevelAlert - 2000.000000 ,UIWindowLevelNormal 0.000000, UIWindowLevelStatusBar 1000.000000</p>
 <p>默认的UIWindow层级为UIWindowLevelNormal，当系统需要在其上面覆盖UIAlerView时，创建一个UIWindowLevelAlert层级的UIWindow</p>
-<p>####手工创建UIWindow</p>
+<h3>手工创建UIWindow</h3>
+
+
 <p>创建UIWindow和UIView不同的是，一旦被创建，它会自动的被添加到界面上。<br>    @interface ViewController ()<br>    {<br>        UIWindow *_uiwindow;<br>    }<br>    @end</p>
 <pre><code>- (IBAction)click:(id)sender {
     _uiwindow = [[UIWindow alloc] initWithFrame:[UIScreen     mainScreen].bounds];
@@ -578,22 +595,6 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;�
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/03/01/再开始/" rel="next" title="再开始">
-                <i class="fa fa-chevron-left"></i> 再开始
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
 
       
       
@@ -640,8 +641,17 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/IMG_0084.png"
@@ -656,7 +666,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -665,7 +675,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -674,7 +684,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -699,6 +709,22 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;�
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">UIWindow的主要作用有：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">为UIWindow增加UIView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">系统对UIWindow的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">WindowLevel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">手工创建UIWindow</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
