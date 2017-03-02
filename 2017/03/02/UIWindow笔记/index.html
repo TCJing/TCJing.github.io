@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,test," />
+  <meta name="keywords" content="iOS,note," />
 
 
 
@@ -87,16 +87,46 @@
 
 
 
-<meta name="description" content="wo la la">
+<meta name="description" content="UIWindow更多的时候只作为UIView的顶层容器存在
+####UIWindow的主要作用有：
+
+作为UIView的最顶层容器，包含应用所需要的所有的UIView
+传递触摸消息和键盘事件给UIView
+
+####为UIWindow增加UIView
+
+因为其本身是UIView的子类，所以可以调用addSubView方法
+
+通过设置其特有的rootViewController属性。 通过设置其属性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="再开始">
-<meta property="og:url" content="http://yoursite.com/2017/03/01/再开始/index.html">
+<meta property="og:title" content="UIWindow笔记">
+<meta property="og:url" content="http://yoursite.com/2017/03/02/UIWindow笔记/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="wo la la">
-<meta property="og:updated_time" content="2017-03-01T14:50:53.000Z">
+<meta property="og:description" content="UIWindow更多的时候只作为UIView的顶层容器存在
+####UIWindow的主要作用有：
+
+作为UIView的最顶层容器，包含应用所需要的所有的UIView
+传递触摸消息和键盘事件给UIView
+
+####为UIWindow增加UIView
+
+因为其本身是UIView的子类，所以可以调用addSubView方法
+
+通过设置其特有的rootViewController属性。 通过设置其属性">
+<meta property="og:updated_time" content="2017-03-02T06:21:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="再开始">
-<meta name="twitter:description" content="wo la la">
+<meta name="twitter:title" content="UIWindow笔记">
+<meta name="twitter:description" content="UIWindow更多的时候只作为UIView的顶层容器存在
+####UIWindow的主要作用有：
+
+作为UIView的最顶层容器，包含应用所需要的所有的UIView
+传递触摸消息和键盘事件给UIView
+
+####为UIWindow增加UIView
+
+因为其本身是UIView的子类，所以可以调用addSubView方法
+
+通过设置其特有的rootViewController属性。 通过设置其属性">
 
 
 
@@ -124,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/01/再开始/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/02/UIWindow笔记/"/>
 
 
 
 
 
-  <title> 再开始 | 颠倒碎碎念 </title>
+  <title> UIWindow笔记 | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/再开始/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/UIWindow笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="颠倒">
@@ -312,7 +342,7 @@
             
             
               
-                再开始
+                UIWindow笔记
               
             
           </h1>
@@ -327,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T22:50:05+08:00">
-                2017-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T11:11:37+08:00">
+                2017-03-02
               </time>
             
 
@@ -350,8 +380,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/测试啦/" itemprop="url" rel="index">
-                    <span itemprop="name">测试啦</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -368,8 +398,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/01/再开始/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/01/再开始/" itemprop="commentCount"></span>
+                <a href="/2017/03/02/UIWindow笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/02/UIWindow笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +425,124 @@
       
 
       
-        <h1>wo la la </h1>
+        <p>UIWindow更多的时候只作为UIView的顶层容器存在</p>
+<p>####UIWindow的主要作用有：</p>
+<ul>
+<li>作为UIView的最顶层容器，包含应用所需要的所有的UIView</li>
+<li>传递触摸消息和键盘事件给UIView</li>
+</ul>
+<p>####为UIWindow增加UIView</p>
+<ul>
+<li><p>因为其本身是UIView的子类，所以可以调用addSubView方法</p>
+</li>
+<li><p>通过设置其特有的rootViewController属性。 通过设置其属性添加view对应的UIViewController，UIWindow自动将其view添加到当前window中。同时负责维护ViewController和view的生命周期。</p>
+</li>
+</ul>
+<p>####系统对UIWindow的使用</p>
+<p>调用系统的控件时(UIAlertView)，iOS系统为了保证UIAlertView在所有的界面之上，它会临时创建一个新的UIWindow，通过将其UIWindow的UIWindowLevel设置得更高，让UIAlertView盖在所有的应用界面之上</p>
+<p>####WindowLevel</p>
+<p>UIWindow的UIWindowLevel属性，定义了UIWindow的层级</p>
+<pre><code>UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;
+UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;
+UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar 
+</code></pre><p>通过代码将这些值输出：</p>
+<pre><code>NSLog(@&quot;UIWindowLevelAlert - %lf ,UIWindowLevelNormal %lf, UIWindowLevelStatusBar %lf&quot;,UIWindowLevelAlert,UIWindowLevelNormal,UIWindowLevelStatusBar);
+</code></pre><p>输出的结果为：<br>     UIWindowLevelAlert - 2000.000000 ,UIWindowLevelNormal 0.000000, UIWindowLevelStatusBar 1000.000000</p>
+<p>默认的UIWindow层级为UIWindowLevelNormal，当系统需要在其上面覆盖UIAlerView时，创建一个UIWindowLevelAlert层级的UIWindow</p>
+<p>####手工创建UIWindow</p>
+<p>创建UIWindow和UIView不同的是，一旦被创建，它会自动的被添加到界面上。<br>    @interface ViewController ()<br>    {<br>        UIWindow *_uiwindow;<br>    }<br>    @end</p>
+<pre><code>- (IBAction)click:(id)sender {
+    _uiwindow = [[UIWindow alloc] initWithFrame:[UIScreen     mainScreen].bounds];
+    //设置其层级
+    _uiwindow.windowLevel = UIWindowLevelNormal;
+    _uiwindow.backgroundColor = [UIColor redColor];
+    _uiwindow.hidden = NO;
+
+    UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] init];
+    [gesture addTarget:self action:@selector(hideWindow:)];
+    [_uiwindow addGestureRecognizer:gesture];
+   }
+
+   -(void)hideWindow:(UIGestureRecognizer *)gesture{
+    _uiwindow.hidden = YES;
+    //移除的方式就是清空
+    _uiwindow = nil;
+    }
+</code></pre><p>作者(唐巧)在做有道云笔记时，想做一个密码保护功能，当用户从应用的任何界面按Home键退出，过一段时间再从后台换回来时，显示一个密码输入界面。这个密码界面可能从任何应用界面弹出，并且需要盖在所有界面的最上层，它很适合用一个UIWindow来实现</p>
+<pre><code>#import &lt;UIKit/UIKit.h&gt;
+
+   @interface PasswordInputWindow : UIWindow
+    -(void)show;
+    +(instancetype)sharedInstance;
+   @end
+
+   #import &quot;PasswordInputWindow.h&quot;
+
+ @implementation PasswordInputWindow{
+     UITextField *_textField;
+  }
++(instancetype)sharedInstance{
+    //更改其生命周期
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+    sharedInstance = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    });
+    return sharedInstance;
+   }
+
+-(instancetype)initWithFrame:(CGRect)frame{
+self = [super initWithFrame:frame];
+if (self) {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 200, 20)];
+    label.text = @&quot;请输入密码&quot;;
+    [self addSubview:label];
+
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 80, 200, 20)];
+    textField.backgroundColor = [UIColor whiteColor];
+    //密码输入时单个显示
+    textField.secureTextEntry = YES;
+    [self addSubview:textField];
+
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, 110, 200, 44)];
+    [button setBackgroundColor:[UIColor blueColor]];
+    button.titleLabel.textColor = [UIColor blackColor];
+    [button setTitle:@&quot;确定&quot; forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(completeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.backgroundColor = [UIColor yellowColor];
+    [self addSubview:button];
+    _textField = textField;
+}
+return self;
+   }
+-(void)show{
+    //使其成为主窗口，调用这个方法就让当前窗口成为主窗口
+    [self makeKeyWindow];
+    self.hidden = NO;
+}
+-(void)completeButtonPressed{
+    if ([_textField.text isEqualToString:@&quot;abcd&quot;]) {
+        //关闭键盘
+        [_textField resignFirstResponder];
+        //辞去主窗口
+        [self resignKeyWindow];
+        self.hidden = YES;
+    }else{
+        [self showErrorAlertView];
+   }
+}
+-(void)showErrorAlertView{
+
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@&quot;密码    错误，正确密码是abcd&quot; delegate:nil cancelButtonTitle:@&quot;OK&quot;     otherButtonTitles:nil, nil];
+
+[alertView show];
+}
+@end
+</code></pre><p>只需要在应用进入后台的回调函数中，将该UIWindow创建显示出来即可</p>
+<pre><code> - (void)applicationDidEnterBackground:(UIApplication *)application {
+    [[PasswordInputWindow sharedInstance] show];
+}
+</code></pre><p><strong>需要注意的是，如果我们创建的window需要处理键盘事件，那就需要合理的将其设置为keyWindow.keyWindow是被系统设计用来接收键盘和其他非触摸事件的UIWindow。通过makeKeyWindow和resignKeyWindow来将自己的window设置为keyWindow，以及辞去keyWindow</strong>，</p>
 
       
     </div>
@@ -421,7 +568,7 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/note/" rel="tag"># note</a>
           
         </div>
       
@@ -434,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/01/开始/" rel="next" title="开始">
-                <i class="fa fa-chevron-left"></i> 开始
+              <a href="/2017/03/01/再开始/" rel="next" title="再开始">
+                <i class="fa fa-chevron-left"></i> 再开始
               </a>
             
           </div>
@@ -443,10 +590,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/02/UIWindow笔记/" rel="prev" title="UIWindow笔记">
-                UIWindow笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,8 +615,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/01/再开始/"
-           data-title="再开始" data-url="http://yoursite.com/2017/03/01/再开始/">
+      <div class="ds-thread" data-thread-key="2017/03/02/UIWindow笔记/"
+           data-title="UIWindow笔记" data-url="http://yoursite.com/2017/03/02/UIWindow笔记/">
       </div>
     
   </div>
@@ -497,17 +640,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/IMG_0084.png"
@@ -565,22 +699,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">wo la la </span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
