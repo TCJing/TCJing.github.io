@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[HTML5学习第二天]]></title>
       <url>%2F2017%2F03%2F03%2FHTML5%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9%2F</url>
-      <content type="text"><![CDATA[盒子模型 属性每个盒子模型都有四个属性 内容(content)填充(内边距,padding)边框(border)边界(margin,外边距)标准盒子模型图内容属性heightmax-heightmin-heightwidthmax-widthmin-width填充属性(内边距,padding)paddingpadding-bottompadding-leftpadding-rightpadding-top举例子:内边距1234padding: 10px 5px 15px 10px; 设置上,左,下,右内边距padding: 10px 5px 15px; 设置上,左右,下边距padding: 10px 5px; 设置上下,左右边距padding: 10px; 设置上下左右边距边框(border):设置4个边框的样式123p&#123;border: 5px solid red;&#125;border简写属性在一个声明设置所有的边框属性可以按顺序设置如下属性:border-widthborder-styleborder-color]]></content>
+      <content type="text"><![CDATA[盒子模型 属性每个盒子模型都有四个属性 内容(content) 填充(内边距,padding) 边框(border) 边界(margin,外边距) 标准盒子模型图 内容属性 height max-height min-height width max-width min-width 填充属性(内边距,padding) padding padding-bottom padding-left padding-right padding-top举例子:内边距1234padding: 10px 5px 15px 10px; 设置上,左,下,右内边距padding: 10px 5px 15px; 设置上,左右,下边距padding: 10px 5px; 设置上下,左右边距padding: 10px; 设置上下左右边距 边框(border):设置4个边框的样式123p&#123;border: 5px solid red;&#125; border简写属性在一个声明设置所有的边框属性可以按顺序设置如下属性: border-width border-style border-color设置边框设置: border-radius 边界(margin,外边距) margin margin-top margin-bottom margin-left margin-right1234margin: 10px 5px 15px 10px; 设置上,左,下,右外边距margin: 10px 5px 15px; 设置上,左右,外边距margin: 10px 5px; 设置上下,左右外边距margin: 10px; 设置上下左右外边距]]></content>
     </entry>
 
     
