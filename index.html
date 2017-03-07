@@ -408,14 +408,18 @@
 对于OC的函数，属于动态调用过程，在编译的时候，并不能真正的决定调用哪个函数，只有在真正的运行的时候才会根据函数的名称找到对应的函数来调用
 事实证明：
 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要申明过就不会报错
-在编译阶段，C语言调用未实现的函数就会报错二、runtime作用1.发送消息
+在编译阶段，C语言调用未实现的函数就会报错
+
+二、runtime作用
+1.发送消息
+
 方法调用的本质，就是让对象发送消息
 objc_megSend,只有对象才能发送消息，因此以objc开头
 使用消息机制前提，必须导入#import
 clang -rewrite-objc main.m 查看最终生成代码
 
 123@autoreleasepool &#123;Person *person = [[Person alloc] init];&#125;
-123456int main(int argc, const char * argv[]) &#123;/* @autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepool;P
+123456int main(int argc, const char * argv[]) &#123;/* @autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepo
           ...
           <!--noindex-->
           <div class="post-button text-center">
