@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,UI控件," />
 
 
 
@@ -87,15 +87,25 @@
 
 
 
-<meta name="description" content="立志做一个屌丝">
-<meta property="og:type" content="website">
-<meta property="og:title" content="颠倒碎碎念">
-<meta property="og:url" content="http://yoursite.com/tags/HTML/index.html">
+<meta name="description" content="UIAlertView事件处理方式一：通过这种方式，存在的缺陷有：控件的创建和事件的处理是分布的，这样的阅读性是较差的，同时，在事件处理方法当中，当面对多个UIAlertView的时候，需要进行if else的判断，代码选得特别冗余
+// button1 点击执行的方法
+- (IBAction)alertClick:(id)sender {
+UIAlertView *alertView = [[U">
+<meta property="og:type" content="article">
+<meta property="og:title" content="巧妙运用对象关联设计alertview">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/巧妙运用对象关联设计alertview/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="立志做一个屌丝">
+<meta property="og:description" content="UIAlertView事件处理方式一：通过这种方式，存在的缺陷有：控件的创建和事件的处理是分布的，这样的阅读性是较差的，同时，在事件处理方法当中，当面对多个UIAlertView的时候，需要进行if else的判断，代码选得特别冗余
+// button1 点击执行的方法
+- (IBAction)alertClick:(id)sender {
+UIAlertView *alertView = [[U">
+<meta property="og:updated_time" content="2017-03-07T15:00:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="颠倒碎碎念">
-<meta name="twitter:description" content="立志做一个屌丝">
+<meta name="twitter:title" content="巧妙运用对象关联设计alertview">
+<meta name="twitter:description" content="UIAlertView事件处理方式一：通过这种方式，存在的缺陷有：控件的创建和事件的处理是分布的，这样的阅读性是较差的，同时，在事件处理方法当中，当面对多个UIAlertView的时候，需要进行if else的判断，代码选得特别冗余
+// button1 点击执行的方法
+- (IBAction)alertClick:(id)sender {
+UIAlertView *alertView = [[U">
 
 
 
@@ -123,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/HTML/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/07/巧妙运用对象关联设计alertview/"/>
 
 
 
 
 
-  <title> 标签: HTML | 颠倒碎碎念 </title>
+  <title> 巧妙运用对象关联设计alertview | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +164,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,158 +290,281 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        HTML
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/05/innerHTML和creatTextCode区分/" itemprop="url">
-              
-                <span itemprop="name">innerHTML和creatTextCode区分</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-05T01:19:43+08:00"
-              content="2017-03-05" >
-          03-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/05/HTML学习之Location对象/" itemprop="url">
-              
-                <span itemprop="name">HTML学习之Location对象</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-05T01:10:24+08:00"
-              content="2017-03-05" >
-          03-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/04/UIWebView认识/" itemprop="url">
-              
-                <span itemprop="name">UIWebView认识</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-04T01:22:37+08:00"
-              content="2017-03-04" >
-          03-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/03/HTML5学习第二天/" itemprop="url">
-              
-                <span itemprop="name">HTML5学习第二天</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-03T13:11:05+08:00"
-              content="2017-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/02/HTML学习第一天/" itemprop="url">
-              
-                <span itemprop="name">HTML学习第一天</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-02T14:43:08+08:00"
-              content="2017-03-02" >
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/巧妙运用对象关联设计alertview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                巧妙运用对象关联设计alertview
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:18:44+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自定义控件/" itemprop="url" rel="index">
+                    <span itemprop="name">自定义控件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/07/巧妙运用对象关联设计alertview/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/07/巧妙运用对象关联设计alertview/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>UIAlertView事件处理方式一：<br>通过这种方式，存在的缺陷有：控件的创建和事件的处理是分布的，这样的阅读性是较差的，同时，在事件处理方法当中，当面对多个UIAlertView的时候，需要进行if else的判断，代码选得特别冗余</p>
+<p>// button1 点击执行的方法</p>
+<pre><code>- (IBAction)alertClick:(id)sender {
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;title&quot; message:@&quot;message&quot; delegate:self cancelButtonTitle:@&quot;cancel&quot; otherButtonTitles:@&quot;ok&quot;, nil];
+alertView.tag = 1000;
+[alertView show];
+}
+</code></pre><p>// button2 点击执行的方法</p>
+<pre><code>- (IBAction)alertClick2:(id)sender {
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;title&quot; message:@&quot;message&quot; delegate:self cancelButtonTitle:@&quot;cancel&quot; otherButtonTitles:@&quot;ok&quot;, nil];
+alertView.tag = 2000;
+[alertView show];
+}
+</code></pre><p>// alertview 点击执行的delegate方法,前提 需要self实现UIAlertViewDelegate协议</p>
+<pre><code>- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+if (alertView.tag == 1000) {
+    NSLog(@&quot;alertView1 执行逻辑操作&quot;);
+}
+else if (alertView.tag == 2000) {
+    NSLog(@&quot;alertView2 执行逻辑操作&quot;);
+}
+else if (alertView.tag == 3000) {
+    NSLog(@&quot;alertView3 执行逻辑操作&quot;);
+}
+// ...等等很多alertview
+}
+</code></pre><p>UIAlertView事件处理方式二：</p>
+<p>在UIAlertView的分类当中<br>UIAlertView+tc.h<br>    @interface UIAlertView (tc)<br>    -(void)tc_clickButtonAtIndexWithBlock:(void(^)()) block;<br>    @end</p>
+<p>UIAlertView+tc.m<br>    typedef void(^block)();<br>    static char const *TCAlertViewKey = “TCAlertViewKey”;</p>
+<pre><code>#import &quot;UIAlertView+tc.h&quot;
+#import &lt;objc/message.h&gt;
+@interface UIAlertView()&lt;UIAlertViewDelegate&gt;
+@end
+@implementation UIAlertView (tc)
+-(void)tc_clickButtonAtIndexWithBlock:(void (^)())block{
+objc_setAssociatedObject(self, TCAlertViewKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+self.delegate = self;
+}
+#pragma mark -UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:    (NSInteger)buttonIndex{
+block block = objc_getAssociatedObject(self, TCAlertViewKey);
+block(alertView, buttonIndex);
+}
+@end
+</code></pre><p>调用的部分：</p>
+<pre><code>- (IBAction)buttonClick:(id)sender {
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;a&quot; message:@&quot;b&quot; delegate:nil cancelButtonTitle:@&quot;c&quot; otherButtonTitles:@&quot;d&quot;, nil];
+[alertView show];
+[alertView tc_clickButtonAtIndexWithBlock:^(UIAlertView *alertView, NSInteger index){
+    NSLog(@&quot;%@---- %zd&quot;,alertView, index);
+}];
+}
+- (IBAction)buttonClick2:(id)sender {
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;a&quot; message:@&quot;b&quot; delegate:nil cancelButtonTitle:@&quot;c&quot; otherButtonTitles:@&quot;d&quot;, nil];
+[alertView show];
+[alertView tc_clickButtonAtIndexWithBlock:^(UIAlertView *alertView, NSInteger index){
+    NSLog(@&quot;%@ +++++ %zd&quot;,alertView, index);
+}];
+}
+</code></pre><p>UIAlertView事件处理方式三：</p>
+<pre><code>typedef void(^block)();
+#import &lt;objc/message.h&gt;
+#import &quot;UIAlertView+tc.h&quot;
+
+static char const *TCAlertViewKey = &quot;TCAlertViewKey&quot;;
+/**
+ *  一个专门的类，用来处理代理事件，包括block的存储以及事件的处理
+ */
+@interface TCAlertViewDelegate : NSObject&lt;UIAlertViewDelegate&gt;
+{
+block _block;
+}
+-(instancetype)initWithBlock:(block) block;
+@end
+@implementation TCAlertViewDelegate
+-(instancetype)initWithBlock:(block)block{
+if (self = [super init]) {
+    objc_setAssociatedObject(self, TCAlertViewKey, self, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    _block = block;
+}
+return self;
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+if (_block) {
+    _block(alertView, buttonIndex);
+}
+}
+
+@end
+@implementation UIAlertView (tc)
+//delegate -&gt; weak ，如果直接让TCAlertViewDelegate对象成为代理，会马上    挂掉
+-(void)tc_clickButtonAtIndexWithBlock:(void (^)())block{
+//添加了一个关联对象，因为这个对象的存储方式是copy，所以这个对象就不会被释放
+id delegate = objc_getAssociatedObject( [[TCAlertViewDelegate alloc] initWithBlock:block],TCAlertViewKey);
+//让这个专门的类成为代理
+self.delegate = delegate;
+}
+@end
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/UI控件/" rel="tag"># UI控件</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/runtime/" rel="next" title="runtime">
+                <i class="fa fa-chevron-left"></i> runtime
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -439,6 +572,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/07/巧妙运用对象关联设计alertview/"
+           data-title="巧妙运用对象关联设计alertview" data-url="http://yoursite.com/2017/03/07/巧妙运用对象关联设计alertview/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -626,6 +767,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
