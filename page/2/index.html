@@ -89,13 +89,12 @@
 
 <meta name="description" content="立志做一个屌丝">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="颠倒碎碎念">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
 <meta property="og:description" content="立志做一个屌丝">
-<meta property="og:updated_time" content="2017-03-01T14:21:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="颠倒碎碎念">
 <meta name="twitter:description" content="立志做一个屌丝">
 
 
@@ -124,19 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>
-  
-
-  
-    categories | 颠倒碎碎念
-  
-</title>
+  <title> 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +154,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,28 +281,194 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <div id="posts" class="posts-expand">
-  <header class="post-header">
+  
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/UIWindow笔记/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
 
     
-    
-      <div class="category-all-page">
-        <div class="category-all-title">
-            目前共计 3 个分类
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/02/UIWindow笔记/" itemprop="url">
+                  UIWindow笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T11:11:37+08:00">
+                2017-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/02/UIWindow笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/02/UIWindow笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/自定义控件/">自定义控件</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
-  </div>
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          UIWindow更多的时候只作为UIView的顶层容器存在
+UIWindow的主要作用有：
+
+
+作为UIView的最顶层容器，包含应用所需要的所有的UIView
+传递触摸消息和键盘事件给UIView
+
+为UIWindow增加UIView
+
+
+
+因为其本身是UIView的子类，所以可以调用addSubView方法
+
+通过设置其特有的rootViewController属性。 通过设置其属性添加view对应的UIViewController，UIWindow自动将其view添加到当前window中。同时负责维护ViewController和view的生命周期。
+
+
+系统对UIWindow的使用
+
+调用系统的控件时(UIAlertView)，iOS系统为了保证UIAlertView在所有的界面之上，它会临时创建一个新的UIWindow，通过将其UIWindow的UIWindowLevel设置得更高，让UIAlertView盖在所有的应用界面之上
+WindowLevel
+
+
+UIWindow的UIWindowLevel属性，定义了UIWindow的层级
+UIKIT_EXTERN const U
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/02/UIWindow笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
           
           </div>
@@ -315,14 +476,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="categories/index.html"
-           data-title="categories" data-url="http://yoursite.com/categories/index.html">
-      </div>
-    
-  </div>
-
 
         </div>
         
