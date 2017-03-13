@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,runloop," />
 
 
 
@@ -87,15 +87,22 @@
 
 
 
-<meta name="description" content="立志做一个屌丝">
-<meta property="og:type" content="website">
-<meta property="og:title" content="颠倒碎碎念">
-<meta property="og:url" content="http://yoursite.com/tags/UIWebView/index.html">
+<meta name="description" content="利用RunLoop空闲时间执行任务
+空闲RunLoopMode:
+当用户正在滑动 UIScrollView 时，RunLoop 将切换到 UITrackingRunLoopMode,接受滑动手势和处理滑动事件（包括减速和弹簧效果）,此时，其他 Mode （除 NSRunLoopCommonModes 这个组合 Mode）下的事件将全部暂停执行，来保证滑动事件的优先处理，这也是 iOS 滑动顺畅的重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="runloop">
+<meta property="og:url" content="http://yoursite.com/2017/03/13/runloop/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="立志做一个屌丝">
+<meta property="og:description" content="利用RunLoop空闲时间执行任务
+空闲RunLoopMode:
+当用户正在滑动 UIScrollView 时，RunLoop 将切换到 UITrackingRunLoopMode,接受滑动手势和处理滑动事件（包括减速和弹簧效果）,此时，其他 Mode （除 NSRunLoopCommonModes 这个组合 Mode）下的事件将全部暂停执行，来保证滑动事件的优先处理，这也是 iOS 滑动顺畅的重">
+<meta property="og:updated_time" content="2017-03-13T13:48:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="颠倒碎碎念">
-<meta name="twitter:description" content="立志做一个屌丝">
+<meta name="twitter:title" content="runloop">
+<meta name="twitter:description" content="利用RunLoop空闲时间执行任务
+空闲RunLoopMode:
+当用户正在滑动 UIScrollView 时，RunLoop 将切换到 UITrackingRunLoopMode,接受滑动手势和处理滑动事件（包括减速和弹簧效果）,此时，其他 Mode （除 NSRunLoopCommonModes 这个组合 Mode）下的事件将全部暂停执行，来保证滑动事件的优先处理，这也是 iOS 滑动顺畅的重">
 
 
 
@@ -123,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/UIWebView/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/13/runloop/"/>
 
 
 
 
 
-  <title> 标签: UIWebView | 颠倒碎碎念 </title>
+  <title> runloop | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,46 +287,197 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        UIWebView
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/13/runloop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                runloop
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-13T21:32:36+08:00">
+                2017-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/13/runloop/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/runloop/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>利用RunLoop空闲时间执行任务</p>
+<p>空闲RunLoopMode:</p>
+<p>当用户正在滑动 UIScrollView 时，RunLoop 将切换到 UITrackingRunLoopMode,接受滑动手势和处理滑动事件（包括减速和弹簧效果）,此时，其他 Mode （除 NSRunLoopCommonModes 这个组合 Mode）下的事件将全部暂停执行，来保证滑动事件的优先处理，这也是 iOS 滑动顺畅的重要原因。</p>
+<p>当 UI 没在滑动时，默认的 Mode 是 NSDefaultRunLoopMode（同 CF 中的 kCFRunLoopDefaultMode），同时也是 CF 中定义的 “空闲状态 Mode”。当用户啥也不点，此时也没有什么网络 IO 时，就是在这个 Mode 下。</p>
+<p>用RunLoopObserver找准时机:</p>
+<p>注册 RunLoopObserver 可以观测当前 RunLoop 的运行状态，并在状态机切换时收到通知：<br>1.RunLoop开始<br>2.RunLoop即将处理Timer<br>3.RunLoop即将处理Source<br>4.RunLoop即将进入休眠状态<br>5.RunLoop即将从休眠状态被事件唤醒<br>6.RunLoop退出</p>
+<p>空闲时间执行任何应当满足：<br>RunLoop 处于“空闲”状态 Mode<br>当这一次 RunLoop 迭代处理完成了所有事件，马上要休眠时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CFRunLoopRef runLoop = CFRunLoopGetCurrent();</div><div class="line">CFStringRef runLoopMode = kCFRunLoopDefaultMode;</div><div class="line">CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler</div><div class="line">(kCFAllocatorDefault, kCFRunLoopBeforeWaiting, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity _) &#123;</div><div class="line">// TODO here</div><div class="line">&#125;);</div><div class="line">CFRunLoopAddObserver(runLoop, observer, runLoopMode);</div></pre></td></tr></table></figure></p>
+<p>在其中的 TODO 位置，就可以开始任务的收集和分发了，当然，不能忘记适时的移除这个 observer</p>
+<p>分解成多个RunLoop Source任务：</p>
+<p>假设列表有 20 个 cell，加载后展示了前 5 个，那么开启估算后 table view 只计算了这 5 个的高度，此时剩下 15 个就是“预缓存”的任务，而我们并不希望这 15 个计算任务在同一个 RunLoop 迭代中同步执行，这样会卡顿 UI，所以应该把它们分别分解到 15 个 RunLoop 迭代中执行，这时就需要手动向 RunLoop 中添加 Source 任务（由应用发起和处理的是 Source 0 任务）</p>
+<p>Foundation 层没对 RunLoopSource 提供直接构建的 API，但是提供了一个间接的、既熟悉又陌生的 API：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (void)performSelector:(SEL)aSelector</div><div class="line">onThread:(NSThread *)thr</div><div class="line">withObject:(id)arg</div><div class="line">waitUntilDone:(BOOL)wait</div><div class="line">modes:(NSArray *)array;</div></pre></td></tr></table></figure>
+<p>这个方法将创建一个 Source 0 任务，分发到指定线程的 RunLoop 中，在给定的 Mode 下执行，若指定的 RunLoop 处于休眠状态，则唤醒它处理事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">static int i = 100000;</div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">//获得当前的runloop</div><div class="line">CFRunLoopRef runLoop = CFRunLoopGetCurrent();</div><div class="line">CFStringRef runLoopMode = kCFRunLoopDefaultMode;</div><div class="line">//创建一个observer监听这个状态kCFRunLoopBeforeWaiting</div><div class="line">CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopBeforeWaiting, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity _) &#123;</div><div class="line">if (i == 0) &#123;</div><div class="line">CFRunLoopRemoveObserver(runLoop, observer, runLoopMode);</div><div class="line">CFRelease(observer);</div><div class="line">return ;</div><div class="line">&#125;</div><div class="line">i = i - 1;</div><div class="line">[self performSelector:@selector(downLoad) onThread:[NSThread mainThread] withObject:nil waitUntilDone:NO modes:@[NSDefaultRunLoopMode]];</div><div class="line">&#125;);</div><div class="line">CFRunLoopAddObserver(runLoop, observer, runLoopMode);</div><div class="line">&#125;</div><div class="line">-(void)downLoad&#123;</div><div class="line">NSLog(@&quot;%@&quot;,[NSThread currentThread]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/04/UIWebView认识/" itemprop="url">
-              
-                <span itemprop="name">UIWebView认识</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-04T01:22:37+08:00"
-              content="2017-03-04" >
-          03-04
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/runloop/" rel="tag"># runloop</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/12/iOS小技巧积累/" rel="next" title="iOS小技巧积累">
+                <i class="fa fa-chevron-left"></i> iOS小技巧积累
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -327,6 +485,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/13/runloop/"
+           data-title="runloop" data-url="http://yoursite.com/2017/03/13/runloop/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -514,6 +680,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
