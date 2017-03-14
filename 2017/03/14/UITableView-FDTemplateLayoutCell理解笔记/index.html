@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,第三方框架阅读,category," />
 
 
 
@@ -87,18 +87,23 @@
 
 
 
-<meta name="description" content="1.禁止第三方键盘在要填密码的地方， 为了安全考虑！要么禁用第三方键盘，要么自定义键盘！1234//禁止第三方键盘的使用- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier&amp;#123;return NO;&amp;#1">
+<meta name="description" content="UITableView+FDTemplateLayoutCell Demo部分：
+storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS小技巧积累">
-<meta property="og:url" content="http://yoursite.com/2017/03/12/iOS小技巧积累/index.html">
+<meta property="og:title" content="UITableView+FDTemplateLayoutCell理解笔记">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="1.禁止第三方键盘在要填密码的地方， 为了安全考虑！要么禁用第三方键盘，要么自定义键盘！1234//禁止第三方键盘的使用- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier&amp;#123;return NO;&amp;#1">
-<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Simulator%20Screen%20Shot%202017%E5%B9%B43%E6%9C%8812%E6%97%A5%20%E4%B8%8B%E5%8D%889.12.04.png">
-<meta property="og:updated_time" content="2017-03-12T14:00:57.000Z">
+<meta property="og:description" content="UITableView+FDTemplateLayoutCell Demo部分：
+storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_2.png">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_3.png">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_4.png">
+<meta property="og:updated_time" content="2017-03-14T12:10:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS小技巧积累">
-<meta name="twitter:description" content="1.禁止第三方键盘在要填密码的地方， 为了安全考虑！要么禁用第三方键盘，要么自定义键盘！1234//禁止第三方键盘的使用- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier&amp;#123;return NO;&amp;#1">
-<meta name="twitter:image" content="http://om86drpkf.bkt.clouddn.com/Simulator%20Screen%20Shot%202017%E5%B9%B43%E6%9C%8812%E6%97%A5%20%E4%B8%8B%E5%8D%889.12.04.png">
+<meta name="twitter:title" content="UITableView+FDTemplateLayoutCell理解笔记">
+<meta name="twitter:description" content="UITableView+FDTemplateLayoutCell Demo部分：
+storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell">
+<meta name="twitter:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_2.png">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/12/iOS小技巧积累/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/"/>
 
 
 
 
 
-  <title> iOS小技巧积累 | 颠倒碎碎念 </title>
+  <title> UITableView+FDTemplateLayoutCell理解笔记 | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -293,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/iOS小技巧积累/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="颠倒">
@@ -314,7 +319,7 @@
             
             
               
-                iOS小技巧积累
+                UITableView+FDTemplateLayoutCell理解笔记
               
             
           </h1>
@@ -329,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T19:45:10+08:00">
-                2017-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T17:35:21+08:00">
+                2017-03-14
               </time>
             
 
@@ -370,8 +375,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/12/iOS小技巧积累/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/12/iOS小技巧积累/" itemprop="commentCount"></span>
+                <a href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,11 +402,17 @@
       
 
       
-        <p>1.禁止第三方键盘<br>在要填密码的地方， 为了安全考虑！要么禁用第三方键盘，要么自定义键盘！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//禁止第三方键盘的使用</div><div class="line">- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier&#123;</div><div class="line">return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>2.禁止系统的面板<br>手机默认的输入框右键或者选中文字右键会弹出菜单，但是有时候我们在做对文本严格要求的时候 (比如说不能使文字啊)，就要关闭这个功能， 只需要在自定义的UITextfield或UITextview里面添加下面这一句话：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-(BOOL)canPerformAction:(SEL)action withSender:(id)sender&#123;</div><div class="line">return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>3.点击部分文字响应<br>有时候你需要在一行文本中点击某几个特殊的文字，来实现跳转网页或者打电话的功能。比如点击电话号码，拨打电话：<br><img src="http://om86drpkf.bkt.clouddn.com/Simulator%20Screen%20Shot%202017%E5%B9%B43%E6%9C%8812%E6%97%A5%20%E4%B8%8B%E5%8D%889.12.04.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">#import &quot;TCTextView.h&quot;</div><div class="line"></div><div class="line">@implementation TCTextView</div><div class="line"></div><div class="line">- (instancetype)initWithCoder:(NSCoder *)coder</div><div class="line">&#123;</div><div class="line">self = [super initWithCoder:coder];</div><div class="line">if (self) &#123;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">return self;</div><div class="line">&#125;</div><div class="line">- (void)setText:(NSString *)text&#123;</div><div class="line">[super setText:text];</div><div class="line">//目标文字是你已知的文字，或者取服务器字段知道的</div><div class="line">NSRange range = [self.text rangeOfString:@&quot;110&quot;];</div><div class="line">//text -&gt; attributedString</div><div class="line">NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:text];</div><div class="line">NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];</div><div class="line">//</div><div class="line">[paragraphStyle setLineSpacing:10];</div><div class="line"></div><div class="line">// 行间距</div><div class="line">[attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];</div><div class="line">//改变电话号码的背景色</div><div class="line">[attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range];</div><div class="line">// 下划线</div><div class="line">[attributedString addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:range];</div><div class="line">[attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@&quot;HelveticaNeue-Light&quot; size:16] range:NSMakeRange(0, text.length)];</div><div class="line">self.attributedText = attributedString;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</div><div class="line">NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象</div><div class="line">UITouch *touch = [allTouches anyObject];   //视图中的所有对象</div><div class="line">CGPoint point = [touch locationInView:[touch view]];</div><div class="line">NSRange range = [self.text rangeOfString:@&quot;110&quot;];</div><div class="line"></div><div class="line">//  self.selectedRange = range;</div><div class="line">// 不能设置是因为 selectedable</div><div class="line">[self setSelectedRange:range];</div><div class="line">//The current selection range of the receiver.</div><div class="line"></div><div class="line">NSArray * arr = [self selectionRectsForRange:self.selectedTextRange];</div><div class="line">//取消选中状态</div><div class="line">self.selectedRange = NSMakeRange(0, 0);</div><div class="line">for(UITextSelectionRect * textrect in arr)&#123;</div><div class="line">if(CGRectContainsPoint(textrect.rect, point))&#123;</div><div class="line">// 这里就是响应的地方</div><div class="line">NSLog(@&quot;是我&quot;);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
-<p>4、获取网络图片的尺寸</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">NSArray * urlArr = @[</div><div class="line">@&quot;http://upload-images.jianshu.io/upload_images/31282-390513513494ede8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot;,</div><div class="line">@&quot;http://upload-images.jianshu.io/upload_images/1931381-12109e9d6666bb0e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot;,</div><div class="line">@&quot;http://upload-images.jianshu.io/upload_images/3375207-6adc6a22441681ce.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot;,</div><div class="line">@&quot;http://upload-images.jianshu.io/upload_images/3375207-6adc6a22441681ce.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot;,</div><div class="line">@&quot;http://upload-images.jianshu.io/upload_images/1336788-2ac84707ce22e970.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080/q/50&quot;];</div><div class="line"></div><div class="line">dispatch_group_t grounp  =  dispatch_group_create();</div><div class="line">for(NSString * str in urlArr)&#123;</div><div class="line">// 将当前的下载操作添加到组中</div><div class="line">dispatch_group_enter(grounp);</div><div class="line">// 缓存图片</div><div class="line">[[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:str] options:SDWebImageDownloaderUseNSURLCache progress:^(NSInteger receivedSize, NSInteger expectedSize) &#123;</div><div class="line"></div><div class="line">&#125; completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) &#123;</div><div class="line">// 把缓存到本地的img添加到数据， 也可以通过image.size取到宽高比例</div><div class="line">[_arr addObject:image];</div><div class="line">//完成单张图片下载离开当前组</div><div class="line">dispatch_group_leave(grounp);</div><div class="line">&#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">dispatch_group_notify(grounp, dispatch_get_main_queue(), ^&#123;</div><div class="line">// 来到这里所有图片都下载完成</div><div class="line">// 更新UI, 就好了</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        <p>UITableView+FDTemplateLayoutCell Demo部分：</p>
+<p>storyboard部分：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170314_2.png"><br>①：这里是通过storyboard来添加tableHeadView。<br>    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。<br>②： 这里是自定义了一个动态cell。<br>    在添加约束的时候，需要注意的是：这里的图片是无法确定高度的，这里约束了图片的宽度&lt;=某个值，保证图片不会超过屏幕，图片的高度根据图片的宽度来确定。所以，在做约束的时候，不能将Username Label的垂直位置相对于图片来设置，username Label的底部相对于contentView来设置，UIImageView的底部相对于username Label来设置。<br>③： 在storyboard当中添加了一个refresh control，通过storyboard来添加refresh control的方式为：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170314_3.png"></p>
+<p>监听refresh control的事件的方式是通过对value change的监听<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170314_4.png">;<br>通过拖线的方式添加事件处理： 我们只需要在请求到数据后调用refresh control的endRefreshing方法并且刷新表格</p>
+<p>代码部分：<br>1.枚举的使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, FDSimulatedCacheMode) &#123;</div><div class="line">FDSimulatedCacheModeNone = 0,</div><div class="line">FDSimulatedCacheModeCacheByIndexPath,</div><div class="line">FDSimulatedCacheModeCacheByKey</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>这里将UISegment Control的index与枚举建立关联：<br>直接将index值赋值给枚举变量。这样的好处是： 1.免去了if else的判断。2.相比较if(0) else if(1)这样的代码if(FDSimulatedCacheModeNone) else if (FDSimulatedCacheModeCacheByIndexPath)..具有更高的可读性</p>
+<p>2.开启打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.tableView.fd_debugLogEnabled = YES;</div></pre></td></tr></table></figure></p>
+<p>3.block的使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">//这里的代码内容主要包括了1.将json转为模型数组，将模型数组作为元素添加到可变数组当中</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">[super viewDidLoad];</div><div class="line">//这里采用block回调的方式的好处是： 对代码进行了封装，因为这里两个数组之间本身就存在依赖关系，feedEntitySections依赖于prototypeEntitiesFromJSON，所以通过block的方式，避免被调换顺序，而导致错误。block回调就完成了封装。通过当模型数组创建完毕的时候回调的方式来创建feedEntitySections数组</div><div class="line">[self buildTestDataThen:^&#123;</div><div class="line">self.feedEntitySections = @[].mutableCopy;</div><div class="line">[self.feedEntitySections addObject:self.prototypeEntitiesFromJSON.mutableCopy];</div><div class="line">[self.tableView reloadData];</div><div class="line">&#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">//这里加载文件数据以及json转模型，放在了子线程来执行，避免对主线程可能造成的卡顿和不流畅</div><div class="line">//相对于使用for in使用enumerateObjectsUsingBlock，效率更高</div><div class="line">//最后需要回到主线程调用block，而非在子线程直接调用</div><div class="line">- (void)buildTestDataThen:(void (^)(void))then &#123;</div><div class="line">// Simulate an async request</div><div class="line">dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</div><div class="line"></div><div class="line">// Data from `data.json`</div><div class="line">NSString *dataFilePath = [[NSBundle mainBundle] pathForResource:@&quot;data&quot; ofType:@&quot;json&quot;];</div><div class="line">NSData *data = [NSData dataWithContentsOfFile:dataFilePath];</div><div class="line">NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];</div><div class="line">NSArray *feedDicts = rootDict[@&quot;feed&quot;];</div><div class="line"></div><div class="line">// Convert to `FDFeedEntity`</div><div class="line">NSMutableArray *entities = @[].mutableCopy;</div><div class="line">[feedDicts enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) &#123;</div><div class="line">[entities addObject:[[FDFeedEntity alloc] initWithDictionary:obj]];</div><div class="line">&#125;];</div><div class="line">self.prototypeEntitiesFromJSON = entities;</div><div class="line"></div><div class="line">// Callback</div><div class="line">dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">!then ?: then();</div><div class="line">&#125;);</div><div class="line">&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>IMP<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//根据buttonIndex来调用不同的方法。通过对IMP的使用，免去了if else的使用。</div><div class="line">- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex &#123;</div><div class="line">SEL selectors[] = &#123;</div><div class="line">@selector(insertRow),</div><div class="line">@selector(insertSection),</div><div class="line">@selector(deleteSection)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (buttonIndex &lt; sizeof(selectors) / sizeof(SEL)) &#123;</div><div class="line">void(*imp)(id, SEL) = (typeof(imp))[self methodForSelector:selectors[buttonIndex]];</div><div class="line">imp(self, selectors[buttonIndex]);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -427,6 +438,10 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
+            <a href="/tags/第三方框架阅读/" rel="tag"># 第三方框架阅读</a>
+          
+            <a href="/tags/category/" rel="tag"># category</a>
+          
         </div>
       
 
@@ -438,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/读JZTableViewRowAction理解笔记/" rel="next" title="读JZTableViewRowAction理解笔记">
-                <i class="fa fa-chevron-left"></i> 读JZTableViewRowAction理解笔记
+              <a href="/2017/03/13/runloop/" rel="next" title="runloop">
+                <i class="fa fa-chevron-left"></i> runloop
               </a>
             
           </div>
@@ -447,10 +462,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/13/runloop/" rel="prev" title="runloop">
-                runloop <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,8 +487,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/12/iOS小技巧积累/"
-           data-title="iOS小技巧积累" data-url="http://yoursite.com/2017/03/12/iOS小技巧积累/">
+      <div class="ds-thread" data-thread-key="2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/"
+           data-title="UITableView+FDTemplateLayoutCell理解笔记" data-url="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/">
       </div>
     
   </div>
