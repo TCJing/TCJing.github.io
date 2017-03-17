@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,第三方框架阅读,category," />
+  <meta name="keywords" content="iOS,数据处理," />
 
 
 
@@ -87,23 +87,25 @@
 
 
 
-<meta name="description" content="UITableView+FDTemplateLayoutCell Demo部分：
-storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell">
+<meta name="description" content="通过Core Data 和 iCloud的协作实现跨设备的同步数据
+Core Data 可以使用SQLite作为其后台数据存储。这为Core Data提供了一个高性能的查询引擎。相比较于平面数据文件或是plist文件进行搜索和排序，Core Data能提供更高的速度。
+在任何时间只读取需要的文件， Core Data API能够节省内存。
+使用NSPredicat过滤数据，使用NSSortDes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UITableView+FDTemplateLayoutCell理解笔记">
-<meta property="og:url" content="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/index.html">
+<meta property="og:title" content="Core Data 学习">
+<meta property="og:url" content="http://yoursite.com/2017/03/17/Core-Data-学习/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="UITableView+FDTemplateLayoutCell Demo部分：
-storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell">
-<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_2.png">
-<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_3.png">
-<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_4.png">
-<meta property="og:updated_time" content="2017-03-14T12:10:12.000Z">
+<meta property="og:description" content="通过Core Data 和 iCloud的协作实现跨设备的同步数据
+Core Data 可以使用SQLite作为其后台数据存储。这为Core Data提供了一个高性能的查询引擎。相比较于平面数据文件或是plist文件进行搜索和排序，Core Data能提供更高的速度。
+在任何时间只读取需要的文件， Core Data API能够节省内存。
+使用NSPredicat过滤数据，使用NSSortDes">
+<meta property="og:updated_time" content="2017-03-17T03:03:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UITableView+FDTemplateLayoutCell理解笔记">
-<meta name="twitter:description" content="UITableView+FDTemplateLayoutCell Demo部分：
-storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell">
-<meta name="twitter:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170314_2.png">
+<meta name="twitter:title" content="Core Data 学习">
+<meta name="twitter:description" content="通过Core Data 和 iCloud的协作实现跨设备的同步数据
+Core Data 可以使用SQLite作为其后台数据存储。这为Core Data提供了一个高性能的查询引擎。相比较于平面数据文件或是plist文件进行搜索和排序，Core Data能提供更高的速度。
+在任何时间只读取需要的文件， Core Data API能够节省内存。
+使用NSPredicat过滤数据，使用NSSortDes">
 
 
 
@@ -131,13 +133,13 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/17/Core-Data-学习/"/>
 
 
 
 
 
-  <title> UITableView+FDTemplateLayoutCell理解笔记 | 颠倒碎碎念 </title>
+  <title> Core Data 学习 | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +300,7 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/Core-Data-学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="颠倒">
@@ -319,7 +321,7 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
             
             
               
-                UITableView+FDTemplateLayoutCell理解笔记
+                Core Data 学习
               
             
           </h1>
@@ -334,8 +336,8 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T17:35:21+08:00">
-                2017-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T10:15:10+08:00">
+                2017-03-17
               </time>
             
 
@@ -375,8 +377,8 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/" itemprop="commentCount"></span>
+                <a href="/2017/03/17/Core-Data-学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/17/Core-Data-学习/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,15 +404,20 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
       
 
       
-        <p>UITableView+FDTemplateLayoutCell Demo部分：</p>
-<p>storyboard部分：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170314_2.png"><br>①：这里是通过storyboard来添加tableHeadView。<br>    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。<br>②： 这里是自定义了一个动态cell。<br>    在添加约束的时候，需要注意的是：这里的图片是无法确定高度的，这里约束了图片的宽度&lt;=某个值，保证图片不会超过屏幕，图片的高度根据图片的宽度来确定。所以，在做约束的时候，不能将Username Label的垂直位置相对于图片来设置，username Label的底部相对于contentView来设置，UIImageView的底部相对于username Label来设置。<br>③： 在storyboard当中添加了一个refresh control，通过storyboard来添加refresh control的方式为：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170314_3.png"></p>
-<p>监听refresh control的事件的方式是通过对value change的监听<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170314_4.png">;<br>通过拖线的方式添加事件处理： 我们只需要在请求到数据后调用refresh control的endRefreshing方法并且刷新表格</p>
-<p>代码部分：<br>1.枚举的使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, FDSimulatedCacheMode) &#123;</div><div class="line">FDSimulatedCacheModeNone = 0,</div><div class="line">FDSimulatedCacheModeCacheByIndexPath,</div><div class="line">FDSimulatedCacheModeCacheByKey</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>这里将UISegment Control的index与枚举建立关联：<br>直接将index值赋值给枚举变量。这样的好处是： 1.免去了if else的判断。2.相比较if(0) else if(1)这样的代码if(FDSimulatedCacheModeNone) else if (FDSimulatedCacheModeCacheByIndexPath)..具有更高的可读性</p>
-<p>2.开启打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.tableView.fd_debugLogEnabled = YES;</div></pre></td></tr></table></figure></p>
-<p>3.block的使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">//这里的代码内容主要包括了1.将json转为模型数组，将模型数组作为元素添加到可变数组当中</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">[super viewDidLoad];</div><div class="line">//这里采用block回调的方式的好处是： 对代码进行了封装，因为这里两个数组之间本身就存在依赖关系，feedEntitySections依赖于prototypeEntitiesFromJSON，所以通过block的方式，避免被调换顺序，而导致错误。block回调就完成了封装。通过当模型数组创建完毕的时候回调的方式来创建feedEntitySections数组</div><div class="line">[self buildTestDataThen:^&#123;</div><div class="line">self.feedEntitySections = @[].mutableCopy;</div><div class="line">[self.feedEntitySections addObject:self.prototypeEntitiesFromJSON.mutableCopy];</div><div class="line">[self.tableView reloadData];</div><div class="line">&#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">//这里加载文件数据以及json转模型，放在了子线程来执行，避免对主线程可能造成的卡顿和不流畅</div><div class="line">//相对于使用for in使用enumerateObjectsUsingBlock，效率更高</div><div class="line">//最后需要回到主线程调用block，而非在子线程直接调用</div><div class="line">- (void)buildTestDataThen:(void (^)(void))then &#123;</div><div class="line">// Simulate an async request</div><div class="line">dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</div><div class="line"></div><div class="line">// Data from `data.json`</div><div class="line">NSString *dataFilePath = [[NSBundle mainBundle] pathForResource:@&quot;data&quot; ofType:@&quot;json&quot;];</div><div class="line">NSData *data = [NSData dataWithContentsOfFile:dataFilePath];</div><div class="line">NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];</div><div class="line">NSArray *feedDicts = rootDict[@&quot;feed&quot;];</div><div class="line"></div><div class="line">// Convert to `FDFeedEntity`</div><div class="line">NSMutableArray *entities = @[].mutableCopy;</div><div class="line">[feedDicts enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) &#123;</div><div class="line">[entities addObject:[[FDFeedEntity alloc] initWithDictionary:obj]];</div><div class="line">&#125;];</div><div class="line">self.prototypeEntitiesFromJSON = entities;</div><div class="line"></div><div class="line">// Callback</div><div class="line">dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">!then ?: then();</div><div class="line">&#125;);</div><div class="line">&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<ol>
-<li>IMP<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//根据buttonIndex来调用不同的方法。通过对IMP的使用，免去了if else的使用。</div><div class="line">- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex &#123;</div><div class="line">SEL selectors[] = &#123;</div><div class="line">@selector(insertRow),</div><div class="line">@selector(insertSection),</div><div class="line">@selector(deleteSection)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">if (buttonIndex &lt; sizeof(selectors) / sizeof(SEL)) &#123;</div><div class="line">void(*imp)(id, SEL) = (typeof(imp))[self methodForSelector:selectors[buttonIndex]];</div><div class="line">imp(self, selectors[buttonIndex]);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <ol>
+<li>通过Core Data 和 iCloud的协作实现跨设备的同步数据</li>
+<li>Core Data 可以使用SQLite作为其后台数据存储。这为Core Data提供了一个高性能的查询引擎。相比较于平面数据文件或是plist文件进行搜索和排序，Core Data能提供更高的速度。</li>
+<li>在任何时间只读取需要的文件， Core Data API能够节省内存。</li>
+<li>使用NSPredicat过滤数据，使用NSSortDescriptor排序数据</li>
+<li>Core Data 的关键组件是： 数据存储(data store)、 持久存储协调器(Persistent Store Coordinator)、 托管对象模型(Managed Object Model)、托管对象上下文(Managed Object Context)<ul>
+<li>数据存储： 保存数据的一个或一组文件。它是当保存数据消息发送到Core Data后实际写入到磁盘的文件。数据存储可以是一个二进制数据文件、一个SQLite数据文件或一个内存中的数据文件开发人员不会直接访问数据存储，持久存储协调器抽象了对数据文件的访问。</li>
+<li>持久存储协调器：在托管对象上下文和数据存储之间扮演着中间人的角色。协调器从上下文中获得数据请求并将它们转发给合适的数据存储。协调器将数据存储和托管对象模型关联在一起。持久存储协调器是NSPersistentStoreCoordinator类的实例<ul>
+<li>NSPersistentStoreCoordinator类不是线程安全的，因此，如果计划跨多线程同步访问一个数据存储，则需要为每个线程创建一个协调器或手动锁定和解锁单个协调器</li>
+</ul>
+</li>
+<li>托管对象模型： NSManagedObjectModel。 模型由一组实体组成，它们定义了应用程序中的数据对象。</li>
+<li>托管对象上下文</li>
+</ul>
 </li>
 </ol>
 
@@ -438,9 +445,7 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/第三方框架阅读/" rel="tag"># 第三方框架阅读</a>
-          
-            <a href="/tags/category/" rel="tag"># category</a>
+            <a href="/tags/数据处理/" rel="tag"># 数据处理</a>
           
         </div>
       
@@ -453,8 +458,8 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/13/runloop/" rel="next" title="runloop">
-                <i class="fa fa-chevron-left"></i> runloop
+              <a href="/2017/03/15/SQLite学习/" rel="next" title="SQLite学习">
+                <i class="fa fa-chevron-left"></i> SQLite学习
               </a>
             
           </div>
@@ -462,10 +467,6 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/14/Git-使用/" rel="prev" title="Git 使用">
-                Git 使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,8 +492,8 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/"
-           data-title="UITableView+FDTemplateLayoutCell理解笔记" data-url="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/">
+      <div class="ds-thread" data-thread-key="2017/03/17/Core-Data-学习/"
+           data-title="Core Data 学习" data-url="http://yoursite.com/2017/03/17/Core-Data-学习/">
       </div>
     
   </div>
