@@ -97,7 +97,10 @@
 如果要改变视图的大小或显示，画一条线，或者改变一个对象的颜色，这些改变不会立刻显示出来。有时，这会让编写如下不恰当代码的开发人员感动迷惑：123456&amp;#123;progressView.hidden = NO; //这一行什么也不做//在这里做一些耗时的操作[self doSometingTimeConsuming];progressView.hidden = Y">
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86%E5%9B%BE.001.jpeg">
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170318_1.png">
-<meta property="og:updated_time" content="2017-03-18T14:39:01.000Z">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170318_2.png">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170318_3.png">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170318_6.png">
+<meta property="og:updated_time" content="2017-03-18T15:08:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更完善的自定义绘制">
 <meta name="twitter:description" content="1.UIKit和视图绘图周期：
@@ -414,8 +417,9 @@
 <p>3.自定义视图绘制</p>
 <p>视图可以通过子视图、图层或实现drawRect：方法来表现内容。通常来说，如果实现了drawRect：方法，最好就不要再混用图层与子视图了。<br>2D绘图并不能操作单独的像素，因为像素是依赖目标的。可以从位图上下文中读取它，但无法使用UIKit或Core Graphics函数来直接作用于它。</p>
 <p>4.理解坐标系</p>
-<p>坐标、点、像素之间的微妙转换也可能降低绘制性能，到执行线条和文字模糊。观察以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CGContextSetLineWidth(context,3.);</div><div class="line">CGContextMoveLineToPoint(context,10.,100.);</div><div class="line">CGContextAddLineToPoint(context,200.,100.);</div><div class="line">CGContextStrokePath(context);</div><div class="line"></div><div class="line">CGContextMoveToPoint(context,10.,105.5);</div><div class="line">CGContextAddLineToPoint(context,200.,105.5);</div></pre></td></tr></table></figure></p>
-<p>下图展示的是在非视网膜屏幕上的输出结果，当放大的时候可以看见，两条线条之间的区别：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170318_1.png"></p>
+<p>坐标、点、像素之间的微妙转换也可能降低绘制性能，到执行线条和文字模糊。观察以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//绘制一：</div><div class="line">CGContextSetLineWidth(context,3.);</div><div class="line">CGContextMoveLineToPoint(context,10.,100.);</div><div class="line">CGContextAddLineToPoint(context,200.,100.);</div><div class="line">CGContextStrokePath(context);</div><div class="line">//绘制二：</div><div class="line">CGContextMoveToPoint(context,10.,105.5);</div><div class="line">CGContextAddLineToPoint(context,200.,105.5);</div><div class="line">CGContextStrokePath(context);</div></pre></td></tr></table></figure></p>
+<p>下图展示的是在非视网膜屏幕上的输出结果，当放大的时候可以看见，两条线条之间的区别：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170318_1.png"><br>可以看到，绘制一的结果就要模糊很多。原因在于iOS对坐标系的解读方式。<br>构造一个CGPath时，便是使用了几何坐标系，这与数学中使用的坐标系是一样的，以两条网格线的交点来表示零坐标点。你无法绘制出真正的几何点或几何线条，因为它们都是无限小和无限细的。iOS绘制中必须将这些几何对象转换成像素坐标。像素是设备能控制的最小显示区域单位。<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170318_2.png"><br>调用CGContextStrokePath，iOS会让线条沿路径居中。理想情况下，线宽有3像素宽，所以y=98.5到y=101.5，如下图所示：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170318_3.png"><br>在屏幕上，线条看起来有些模糊。解决这个问题的办法就是将水平或垂直的线条移动到半个点的位置，这样当iOS将线条居中时，边缘刚好就是像素的边界。或者让线条更粗一些。<br>使用非整型宽度的线条，或者坐标系不是整型和半整型时(这个问题也使用于retina屏)，也有可能遇到这个问题。让iOS绘制小数像素时就有可能导致模糊。</p>
+<p>填充工具与画笔不一样。画笔的线条是中心对齐路径的，而填充颜色是基于路径的。如果填充从{10,100}到{200,103}的矩形，每个像素都会被正确填充，如图<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170318_6.png"><br>目前的讨论视点与像素相同。而对于retina屏幕，也依然会因为线宽或坐标系不是整数导致显示模糊的问题。</p>
 
       
     </div>
