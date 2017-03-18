@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,15 +87,22 @@
 
 
 
-<meta name="description" content="立志做一个屌丝">
-<meta property="og:type" content="website">
-<meta property="og:title" content="颠倒碎碎念">
-<meta property="og:url" content="http://yoursite.com/tags/UI控件/index.html">
+<meta name="description" content="1.UIKit和视图绘图周期：
+如果要改变视图的大小或显示，画一条线，或者改变一个对象的颜色，这些改变不会立刻显示出来。有时，这会让编写如下不恰当代码的开发人员感动迷惑：123456&amp;#123;progressView.hidden = NO; //这一行什么也不做//在这里做一些耗时的操作[self doSometingTimeConsuming];progressView.hidden = Y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="更完善的自定义绘制">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/更完善的自定义绘制/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="立志做一个屌丝">
+<meta property="og:description" content="1.UIKit和视图绘图周期：
+如果要改变视图的大小或显示，画一条线，或者改变一个对象的颜色，这些改变不会立刻显示出来。有时，这会让编写如下不恰当代码的开发人员感动迷惑：123456&amp;#123;progressView.hidden = NO; //这一行什么也不做//在这里做一些耗时的操作[self doSometingTimeConsuming];progressView.hidden = Y">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86%E5%9B%BE.001.jpeg">
+<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170318_1.png">
+<meta property="og:updated_time" content="2017-03-18T14:39:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="颠倒碎碎念">
-<meta name="twitter:description" content="立志做一个屌丝">
+<meta name="twitter:title" content="更完善的自定义绘制">
+<meta name="twitter:description" content="1.UIKit和视图绘图周期：
+如果要改变视图的大小或显示，画一条线，或者改变一个对象的颜色，这些改变不会立刻显示出来。有时，这会让编写如下不恰当代码的开发人员感动迷惑：123456&amp;#123;progressView.hidden = NO; //这一行什么也不做//在这里做一些耗时的操作[self doSometingTimeConsuming];progressView.hidden = Y">
+<meta name="twitter:image" content="http://om86drpkf.bkt.clouddn.com/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86%E5%9B%BE.001.jpeg">
 
 
 
@@ -123,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/UI控件/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/18/更完善的自定义绘制/"/>
 
 
 
 
 
-  <title> 标签: UI控件 | 颠倒碎碎念 </title>
+  <title> 更完善的自定义绘制 | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,7 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,46 +287,196 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        UI控件
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/18/更完善的自定义绘制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                更完善的自定义绘制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T18:20:45+08:00">
+                2017-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/18/更完善的自定义绘制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/更完善的自定义绘制/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>1.UIKit和视图绘图周期：</p>
+<p>如果要改变视图的大小或显示，画一条线，或者改变一个对象的颜色，这些改变不会立刻显示出来。有时，这会让编写如下不恰当代码的开发人员感动迷惑：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">progressView.hidden = NO; //这一行什么也不做</div><div class="line">//在这里做一些耗时的操作</div><div class="line">[self doSometingTimeConsuming];</div><div class="line">progressView.hidden = YES;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第一行（progressView.hidden = NO）实际上根本没有作用，理解这一点很重要。这行代码不会使进度视图在执行耗时操作的时候显示出来。无论这个方法运行多久，都不会看到视图显示出来</p>
+<p>下图展示了绘图循环中实际会发生的步骤：<br><img src="http://om86drpkf.bkt.clouddn.com/%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86%E5%9B%BE.001.jpeg"></p>
+<p>所有的绘制都发生在主线程，只要代码运行在主线程，就没有东西可以绘制。在主线程中执行长时间运行操作，会阻碍事件的处理，也会阻碍绘制更新。</p>
+<p>如何开始和停止一个长时间运行操作的活动指示器？采用调度或执行队列来将耗时的任务放入后台，同时创建如下在主线程中进行UIKit调用的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-(IBAction)doSomething:(UIButton *)sender&#123;</div><div class="line">//避免执行任务期间反复点击</div><div class="line">[sender setEnabled:NO];</div><div class="line">[self.activity startAnimation];</div><div class="line">//把耗时的操作放在后台线程，让当前方法迅速执行完，而不是因为耗时操作而阻塞在这里，而阻碍绘制更新，阻碍触摸事件</div><div class="line">dispatch_queue_t bgQueue = dispatch_get_global_queue(0, 0);</div><div class="line">dispatch_async(bgQueue, ^&#123;</div><div class="line">//耗时操作</div><div class="line">[self doSomethingTimeConsuming];</div><div class="line">//回到主线程绘图</div><div class="line">dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">[self.activity endAnimation];</div><div class="line">[sender setEnabled:YES];</div><div class="line">&#125;);</div><div class="line">&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.视图绘制与视图布局</p>
+<p>UIView将子视图的布局(重新排列)从绘图(显示)中独立出来。这对极大程度的优化性能很重要，因为布局的成本通常要比绘制低。布局的成本之所以低，是因为UIView的缓存通过GPU优化的位图进行绘图操作。使用GPU，可以使这些位图的移动，显示，隐藏，旋转，甚至变形和合并的成本非常低。</p>
+<p>如果对一个视图调用setNeedsDisplay方法，它被标记为“需要刷新的”，并且会在下一次绘图周期中重新绘制。除非视图的内容真的会发生变化，否则请不要调用它。大部分UIKit视图会在其数据发生变化时自动管理重绘操作，因此除了自定义的视图，一般并不需要调用setNeedsDisplay。</p>
+<p>旋转设备或滚动视图后，子视图需要重新排列，这时UIKit会调用setNeedsLayout，也就是对于发生变化的视图逐次调用layoutSubViews方法。覆盖layoutSubviews的话，就可以让应用在设备旋转或视图滚动时更加流畅。不必重绘就能重新排列子视图的位置，还可以根据设备方向显示隐藏视图。如果数据改变后只需要进行布局更新(而非绘制)，则可以调用setNeedsLayout方法。</p>
+<p>3.自定义视图绘制</p>
+<p>视图可以通过子视图、图层或实现drawRect：方法来表现内容。通常来说，如果实现了drawRect：方法，最好就不要再混用图层与子视图了。<br>2D绘图并不能操作单独的像素，因为像素是依赖目标的。可以从位图上下文中读取它，但无法使用UIKit或Core Graphics函数来直接作用于它。</p>
+<p>4.理解坐标系</p>
+<p>坐标、点、像素之间的微妙转换也可能降低绘制性能，到执行线条和文字模糊。观察以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CGContextSetLineWidth(context,3.);</div><div class="line">CGContextMoveLineToPoint(context,10.,100.);</div><div class="line">CGContextAddLineToPoint(context,200.,100.);</div><div class="line">CGContextStrokePath(context);</div><div class="line"></div><div class="line">CGContextMoveToPoint(context,10.,105.5);</div><div class="line">CGContextAddLineToPoint(context,200.,105.5);</div></pre></td></tr></table></figure></p>
+<p>下图展示的是在非视网膜屏幕上的输出结果，当放大的时候可以看见，两条线条之间的区别：<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170318_1.png"></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/07/巧妙运用对象关联设计alertview/" itemprop="url">
-              
-                <span itemprop="name">巧妙运用对象关联设计alertview</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-07T22:18:44+08:00"
-              content="2017-03-07" >
-          03-07
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/18/利用运行时关联对象使用示例/" rel="next" title="利用运行时关联对象使用示例">
+                <i class="fa fa-chevron-left"></i> 利用运行时关联对象使用示例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -327,6 +484,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/18/更完善的自定义绘制/"
+           data-title="更完善的自定义绘制" data-url="http://yoursite.com/2017/03/18/更完善的自定义绘制/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -514,6 +679,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
