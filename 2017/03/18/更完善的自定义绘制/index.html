@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170319_2.png">
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/2017-03-19%2020_40_14.gif">
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Simulator%20Screen%20Shot%202017%E5%B9%B43%E6%9C%8819%E6%97%A5%20%E4%B8%8B%E5%8D%8810.44.15.png">
-<meta property="og:updated_time" content="2017-03-19T16:45:59.000Z">
+<meta property="og:updated_time" content="2017-03-19T16:48:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更完善的自定义绘制">
 <meta name="twitter:description" content="1.UIKit和视图绘图周期：
@@ -448,13 +448,11 @@
 <p>9 优化UIView绘制<br>UIView极其子类是高度优化的，可以的话，请尽量使用它们，而不要使用自定义绘图。</p>
 <p>9.1 避免绘图<br>最快的绘图方式就是根本不绘制。👉iOS竭尽全力避免调用drawRect:方法👈。它😨缓存了视图的图像😨并可在开发者不介入的情况下移动、旋转并缩放它。使用一个合适的contentMode,系统在旋转或重新调整大小以调整视图时就不需要调用drawRect：方法。导致drawRect：方法运行的最常见的情况就是调用了setNeedsDisplay。请避免调用不必要的setNeedsDisplay。记住，setNeedsDisplay只是标记视图需要绘制。在单个循环事件中调用多次setNeedsDisplay,实际上并不会比调用一次的情况成本更高。</p>
 <ol>
-<li>自定义绘图与预渲染</li>
+<li><p>自定义绘图与预渲染<br>管理复杂的绘图有两种主要方法： 利用CGPath和CGGreadient通过编码来绘制任意图像，或者使用ps这样的图形程序进行预渲染并作为图片展示出来。<br>然而预渲染有大量缺点： 对各种分辨率的依赖。开发者可能需要管理各种版本的图片。苹果公司最初鼓励开发人员进行预渲染，因为早期的iPhone计算渐变的速度不够快。现在这个问题就没有那么明显了。<br>目前，推荐开发者在代码量合适的情况下，尽量进行自定义绘图。这主要适用于像按钮这样的小元素。若使用了预渲染绘图，建议保持文件的“简洁”并在代码中进行加工。比如说，开发者可能会用一张图片作为按钮的背景，并在代码中处理它的圆角与阴影。这样的话，每当开发者需要作出细微的调整，就不需要重现渲染背景了。</p>
+</li>
+<li><p>像素对齐与模糊文本<br>一个易引起微妙绘图问题的极常见的原因就是像素不对齐。如果要Core Graphics在某个没有对齐像素的点进行绘制，它将出现锯齿。除非对像素精度要求特别高，一般情况下要确保使用整型坐标。</p>
+</li>
 </ol>
-<p>管理复杂的绘图有两种主要方法： 利用CGPath和CGGreadient通过编码来绘制任意图像，或者使用ps这样的图形程序进行预渲染并作为图片展示出来。<br>然而预渲染有大量缺点： 对各种分辨率的依赖。开发者可能需要管理各种版本的图片。苹果公司最初鼓励开发人员进行预渲染，因为早期的iPhone计算渐变的速度不够快。现在这个问题就没有那么明显了。<br>目前，推荐开发者在代码量合适的情况下，尽量进行自定义绘图。这主要适用于像按钮这样的小元素。若使用了预渲染绘图，建议保持文件的“简洁”并在代码中进行加工。比如说，开发者可能会用一张图片作为按钮的背景，并在代码中处理它的圆角与阴影。这样的话，每当开发者需要作出细微的调整，就不需要重现渲染背景了。</p>
-<ol>
-<li>像素对齐与模糊文本</li>
-</ol>
-<p>一个易引起微妙绘图问题的极常见的原因就是像素不对齐。如果要Core Graphics在某个没有对齐像素的点进行绘制，它将出现锯齿。除非对像素精度要求特别高，一般情况下要确保使用整型坐标。</p>
 <p>通常，图形中心会影响像素对齐。因此，center属性会带来麻烦。如果将中心设置为一个整型坐标，原点就可能出现不对齐。尤其要注意文本不对齐的情况，特别是UILabel。解决的办法有两种，首先，字体大小为奇数（比如13而不是12）一般可以正确对齐。如果习惯使用奇数号字体通常可以避免这个问题。要确定避免了这个问题，需要确保通过setFrame：方法或像setAlignedCenter：这样的UIView分类设置图形为整型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(void)setAlignedCenter:(CGPoint)center&#123;</div><div class="line">    self.center = center;</div><div class="line">    self.frame = CGRectIntegral(self.frame);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ol>
 <li>透明、不透明与隐藏</li>
