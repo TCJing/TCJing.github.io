@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[利用CFAbsoluteTimeGetCurrent() 计算时间差]]></title>
+      <url>%2F2017%2F03%2F19%2F%E5%88%A9%E7%94%A8CFAbsoluteTimeGetCurrent-%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E5%B7%AE%2F</url>
+      <content type="text"><![CDATA[开发中，遇到计算时间差的问题，利用CFAbsoluteTimeGetCurrent()可以方便的进行计算 场景：类似购物车中修改商品数量的功能，要求，修改完的数量，要同步到服务器。 分析：如果点击“+”或者“-”，立即进行服务器同步的话，代价貌似有些高，所以采用延时提交的方法：“连续”点击的时候，不提交到服务器，点击停止，进行同步。这个项目中，“连续”点击的判断，采用的是判断两次点击的时间差，如果时间差小于一定的数值（本例中，这个数值是2），那么即可判定是连续点击的操作。代码如下： 12345678910111213141516-(void)editCount&#123; double diff = 0; if(_startTime == 0)&#123; _startTime = CFAbsoluteTimeGetCurrent(); _endTime = _startTime; &#125;else&#123; _endTime = CFAbsoluteTimeGetCurrent(); diff = _endTime - _startTime; _startTime = _endTime; &#125; if(diff &lt; 2)&#123; [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(willUpdateServerCartWithCount) object:nil]; &#125; [self performSelector:self withObject:@selector(willUpdateServerCartWithCount) afterDelay:2.0];&#125;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[inline 内联函数]]></title>
       <url>%2F2017%2F03%2F19%2Finline-%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0%2F</url>
       <content type="text"><![CDATA[YYKit中对对内联函数的使用： 12345static inline void dispatch_async_on_main_queue(void (^block)())&#123; if(pthread_main_np())&#123; block(); &#125;else&#123; dispatch_async(dispatch_get_main_queue(),block); &#125;&#125; 使用这个函数1dispatch_async_on_main_queue(^&#123;&#125;); 比下面这个方式更加的简洁：1dispatch_async(dispatch_get_main_queue(),^&#123;&#125;); 又比如像这样的使用：123456789101112static inline CGFloat CGFloatFromePixel(CGFloat value)&#123; return value/YYScreenScale();&#125;CGFloat YYScreenScale()()&#123; static CGFloat scale; static dispatch_once_t onceToken; dispatch_once(&amp;oneceToken,^&#123; scale = [UIScreen mainScreen].scale; &#125;); return scale;&#125; 内联函数是指inline修饰的函数。内联函数不是在调用时发生转移，而是在编译时将函数体嵌入到每一个调用处。编译时，类似于宏替换，使用函数体替换调用处的函数名。C99中inline就是对编译器的一个提示。 它的出现，主要是用它来替代C中表达式形式的宏定义。 表达式形式的宏定义一例：1#define ExpressionName(Var1,Var2) (Var1+Var2)*(Var1-Var2) 使用这样的宏定义无法进行参数有效性的检验。它的返回值也不能被强制转换为可转换的合适的类型。 可以使用inline函数完全替代表达式形式的宏定义。 使用内联函数能够解决函数调用的效率问题： 函数之间调用，是内存地址之间的调用，当函数调用完毕之后还会返回原来函数执行的地址。函数调用有时间开销，内联函数就是为了解决这一问题。 inline内联函数的使用说明： * 内联函数只是我们向编译器提供的申请,编译器不一定采取inline形式调用函数. * 内联函数不能承载大量的代码.如果内联函数的函数体过大,编译器会自动放弃内联. * 内联函数内不允许使用循环语句或开关语句. * 内联函数的定义须在调用之前.]]></content>
