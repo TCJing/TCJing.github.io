@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170319_1.png">
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Simulator%20Screen%20Shot%202017%E5%B9%B43%E6%9C%8819.png">
 <meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/Snip20170319_2.png">
-<meta property="og:updated_time" content="2017-03-19T07:52:49.000Z">
+<meta property="og:updated_time" content="2017-03-19T08:08:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更完善的自定义绘制">
 <meta name="twitter:description" content="1.UIKit和视图绘图周期：
@@ -431,6 +431,7 @@
 <p>运行得到的效果：<br><img src="http://om86drpkf.bkt.clouddn.com/Simulator%20Screen%20Shot%202017%E5%B9%B43%E6%9C%8819.png"><br>从这段代码可以看出，这里包括太多的输入与运算，很多时候，在坐标系空间中围绕原点进行绘制然后对绘制进行缩放、旋转、平移而更简单。如果把图形绘制在一个4x4的格子中会怎样？<br><img src="http://om86drpkf.bkt.clouddn.com/Snip20170319_2.png"></p>
 <p>现在绘制的计算就变得非常简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (void)drawRect:(CGRect)rect &#123;</div><div class="line">CGSize size = self.bounds.size;</div><div class="line">CGFloat margin = 10;</div><div class="line"></div><div class="line">[[UIColor redColor] set];</div><div class="line">UIBezierPath *path = [UIBezierPath bezierPath];</div><div class="line">[path addArcWithCenter:CGPointMake(0, -1) radius:1 startAngle:-M_PI endAngle:0 clockwise:YES];</div><div class="line"></div><div class="line">[path addArcWithCenter:CGPointMake(1, 0) radius:1 startAngle:-M_PI_2 endAngle:M_PI_2 clockwise:YES];</div><div class="line"></div><div class="line">[path addArcWithCenter:CGPointMake(0, 1) radius:1 startAngle:0 endAngle:M_PI clockwise:YES];</div><div class="line"></div><div class="line">[path addArcWithCenter:CGPointMake(-1, 0) radius:1 startAngle:M_PI_2 endAngle:-M_PI_2 clockwise:YES];</div><div class="line"></div><div class="line">[path closePath];</div><div class="line"></div><div class="line">CGFloat scale = floorf((MIN(size.height, size.width) - margin) / 4);</div><div class="line">CGAffineTransform transform;</div><div class="line">transform = CGAffineTransformMake(scale, 0.0f, 0.f, scale, size.width/2, size.height/2);</div><div class="line">[path applyTransform:transform];</div><div class="line">[path fill];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这个技术可以用来以各种角度绘制复杂的形状。比如说，绘制一个指向右上角的箭头，一般先画一条指向右边的箭头再旋转它会更容易。<br>可以选择使用applyTransform:对路径进行变形。</p>
+<p>6.通过Core Graphics进行绘制</p>
 
       
     </div>
@@ -476,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/19/inline-内联函数/" rel="prev" title="inline 内联函数">
+                inline 内联函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -542,7 +547,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -560,7 +565,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
