@@ -292,6 +292,164 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/" itemprop="url">
+                  UITableView+FDTemplateLayoutCell理解笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T17:35:21+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          UITableView+FDTemplateLayoutCell Demo部分：
+storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell。    在添加约束的时候，需要注意的是：这里的图片是无法确定高度的，这里约束了图片的宽度&lt;=某个值，保证图片不会超过屏幕，图片的高度根据图片的宽度来确定。所以，在做约束的时候，不能将Username Label的垂直位置相对于图片来设置，username Label的底部相对于contentView来设置，UIImageView的底部相对于username Label来设置。③： 在storyboard当中添加了一个refresh control，通过storyboard来添加refresh control的方式为：
+监听refresh control的事件的方式是通过对value c
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/13/runloop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1709,171 +1867,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/巧妙运用对象关联设计alertview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="颠倒">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/IMG_0084.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="颠倒碎碎念">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/07/巧妙运用对象关联设计alertview/" itemprop="url">
-                  巧妙运用对象关联设计alertview
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:18:44+08:00">
-                2017-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/自定义控件/" itemprop="url" rel="index">
-                    <span itemprop="name">自定义控件</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/07/巧妙运用对象关联设计alertview/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/07/巧妙运用对象关联设计alertview/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          UIAlertView事件处理方式一：通过这种方式，存在的缺陷有：控件的创建和事件的处理是分布的，这样的阅读性是较差的，同时，在事件处理方法当中，当面对多个UIAlertView的时候，需要进行if else的判断，代码选得特别冗余
-// button1 点击执行的方法
-- (IBAction)alertClick:(id)sender {
-UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@&quot;title&quot; message:@&quot;message&quot; delegate:self cancelButtonTitle:@&quot;cancel&quot; otherButtonTitles:@&quot;ok&quot;, nil];
-alertView.tag = 1000;
-[alertView show];
-}
-// button2 点击执行的方法
-- (IBAction)alertClick2:(id)sender {
-UIAlertView *alertView = [[UI
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/07/巧妙运用对象关联设计alertview/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1923,7 +1916,7 @@ UIAlertView *alertView = [[UI
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

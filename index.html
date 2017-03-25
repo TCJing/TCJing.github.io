@@ -292,6 +292,166 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/多任务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/23/多任务/" itemprop="url">
+                  多任务
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T22:56:55+08:00">
+                2017-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/23/多任务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/23/多任务/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1.多任务和运行循环简介每个Cocoa应用程序都由一个处于阻塞状态的do/while循环驱动。当有事件发生时，就把事件分派给合适的监听器。
+明白运行循环就是一个大的do/while循环。它运行在某个线程中，从各种事件队列中取得事件，然后把它分配给合适的监听器。
+如果调用applicationWillResignAction:方法，那是因为某个事件触发了你实现的委托调用。这时运行循环会阻塞(对于其他的任何方法来说就是阻塞状态)，调用返回后才能继续运行。主线程运行这些代码时，滚动视图无法滚动，按钮无法高亮，定时器也无法触发。整个UI都会被挂起，直到事件处理完成。
+这并不是说所有的东西都在主运行循环上，每个线程都有自己的运行循环。与大部分的网络请求一样，动画通常也在后台中运行。系统核心会运行一个共享的运行循环。虽然每个线程都有自己的运行循环，但这并不是说每个线程都会处理自己的运行循环。运行循环仅在需要对runUntilDate：等命令做出响应时，才会执行它们的do/while循环。调用main.m文件中的UIApplicationMain就会运行主运行循环。
+NSTimer 基于运行循环进行
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/23/多任务/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/截图方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1719,164 +1879,6 @@ Core Data 的关键组件是： 数据存储(data store)、 持久存储协调�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="颠倒">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/IMG_0084.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="颠倒碎碎念">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/" itemprop="url">
-                  UITableView+FDTemplateLayoutCell理解笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T17:35:21+08:00">
-                2017-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          UITableView+FDTemplateLayoutCell Demo部分：
-storyboard部分：①：这里是通过storyboard来添加tableHeadView。    添加的方式就是直接通过在cell的上面直接拖入一个UIView，这个UIView就可以作为tableHeadView。然后可以在这个tableHeadView中添加一个控件和约束。②： 这里是自定义了一个动态cell。    在添加约束的时候，需要注意的是：这里的图片是无法确定高度的，这里约束了图片的宽度&lt;=某个值，保证图片不会超过屏幕，图片的高度根据图片的宽度来确定。所以，在做约束的时候，不能将Username Label的垂直位置相对于图片来设置，username Label的底部相对于contentView来设置，UIImageView的底部相对于username Label来设置。③： 在storyboard当中添加了一个refresh control，通过storyboard来添加refresh control的方式为：
-监听refresh control的事件的方式是通过对value c
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/14/UITableView-FDTemplateLayoutCell理解笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1926,7 +1928,7 @@ storyboard部分：①：这里是通过storyboard来添加tableHeadView。    �
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
