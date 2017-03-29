@@ -1,0 +1,908 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1 REST简介
+REST服务器总是无状态的。每次API调用都被视作新的请求，服务器并不会记录客户端上下文。客户端需要维护服务器的状态，包括但不限于缓存服务器响应和登录访问令牌。REST式服务器的资源定位是通过URL实现的。REST不使用资源ID作为参数，而是将它作为URL的一部分。例如，http://example.com/resource?id=1234在REST服务器中就变成了http://">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用REST服务">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/使用REST服务/index.html">
+<meta property="og:site_name" content="颠倒碎碎念">
+<meta property="og:description" content="1 REST简介
+REST服务器总是无状态的。每次API调用都被视作新的请求，服务器并不会记录客户端上下文。客户端需要维护服务器的状态，包括但不限于缓存服务器响应和登录访问令牌。REST式服务器的资源定位是通过URL实现的。REST不使用资源ID作为参数，而是将它作为URL的一部分。例如，http://example.com/resource?id=1234在REST服务器中就变成了http://">
+<meta property="og:updated_time" content="2017-03-29T13:59:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用REST服务">
+<meta name="twitter:description" content="1 REST简介
+REST服务器总是无状态的。每次API调用都被视作新的请求，服务器并不会记录客户端上下文。客户端需要维护服务器的状态，包括但不限于缓存服务器响应和登录访问令牌。REST式服务器的资源定位是通过URL实现的。REST不使用资源ID作为参数，而是将它作为URL的一部分。例如，http://example.com/resource?id=1234在REST服务器中就变成了http://">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/25/使用REST服务/"/>
+
+
+
+
+
+  <title> 使用REST服务 | 颠倒碎碎念 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">颠倒碎碎念</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/使用REST服务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用REST服务
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T22:06:02+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/25/使用REST服务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/使用REST服务/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1 REST简介</p>
+<p>REST服务器总是无状态的。每次API调用都被视作新的请求，服务器并不会记录客户端上下文。客户端需要维护服务器的状态，包括但不限于缓存服务器响应和登录访问令牌。<br>REST式服务器的资源定位是通过URL实现的。REST不使用资源ID作为参数，而是将它作为URL的一部分。例如，<a href="http://example.com/resource?id=1234在REST服务器中就变成了http://example.com/resources/1234" target="_blank" rel="external">http://example.com/resource?id=1234在REST服务器中就变成了http://example.com/resources/1234</a>.<br>REST式服务器使用这种方式进行资源定位，而且也不维护客户端状态，这就使客户端可以根据URL缓存响应，就像浏览器缓存网页一样。<br>2 假象的Web服务</p>
+<p>每一次调用web服务时都要在请求中附带访问令牌。</p>
+<p>转化为/loginwaiter和/logintable这两个服务端点。（顾客和服务员）<br>这两个端点都需要返回一个访问令牌。<br>iOS客户端中使用了键值编码(KVC)技术，只需要用非常少的代码就可以把JSON键映射到模型对象。<br>在这些情况下，有一些iOS应用会显示一个浮动的平视显示器(通常称之为HUD)，用于防止用户在评论发表成功之前进行其他操作。从用户体验来说，这是非常糟糕的。</p>
+<p>3 重要提醒<br>编写应用时应当牢记这些要点：</p>
+<ul>
+<li>绝对不要使用同步的网络请求(一旦发送同步请求，直至服务器返回数据完成，才可以进行下一步操作)。即使是在后台线程中，同步调用也不会报告进度。另外一个原因是，如果想取消后台线程的同步请求，只能结束这个线程。另外，也不能控制应用中的网络请求数量，而这对于应用的性能来说是非常关键的。</li>
+<li>尽量不要直接使用NSThread或者基于GCD的线程进行网络请求。</li>
+<li>使用基于NSOperationQueue的线程，使用NSOperationQueue可以非常好地控制队列长度和并发的网络请求数量。基于GCD的线程在块分派之后，就无法取消了。</li>
+</ul>
+<p>4 RESTfulEngine架构(iHotelApp示例代码)</p>
+<p>4.1 NSURLConnectiton与第三方框架<br>MKNetworkKit 封装了很多常用的功能，比如基本认证/摘要认证，表单发布、上传/下载文件。另外一个重要功能就是它封装了NSOperationQueue,可以使用队列来管理网络请求。</p>
+<ol>
+<li>取消请求</li>
+</ol>
+<p>用户离开当前视图时，应该由当前视图控制器负责取消已经创建的网络请求。为了确保这一点，RESTfulEngine类中的所有方法都应该把操作对象返回给视图控制器。<br>通过释放带宽，加快其他请求的速度。</p>
+<p>6.请求相应</p>
+<ol>
+<li>对JSON数据进行键值编码</li>
+</ol>
+<p>setValuesForKeysWithDictionary: 用于匹配类中与字典的键同名的属性，并把字典中的值赋值给该属性。</p>
+<p>setValue:forUndefinedKey:处理不兼容的键值编码。这个方法的默认实现会引发NSUndefinedKeyException异常。</p>
+<p>我们可以在派生内中覆盖这个方法，并且设置相应的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void)setValue:(id)value forUndefinedKey:(NSString *)key&#123;</div><div class="line">if([key isEqualToString:@&quot;ID&quot;])&#123;</div><div class="line">    self.itemID = value;</div><div class="line">&#125;</div><div class="line">if([key isEqualToString:@&quot;description&quot;])&#123;</div><div class="line">    self.itemDescription = value;</div><div class="line">&#125;.</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>列表界面的JSON对象与详细界面的JSON对象</li>
+</ol>
+<p>一个JSON对象就是从服务器传送到客户端的负载。为了提升性能并且减少负载，服务器开发者通常会为同一个对象使用两种不同的负载。一种是大负载格式，包含了对象的全部信息。另一种是小负载格式，只包含了用于在列表中显示的必须信息。这种技术可以明显的提高iOS应用的性能。从实现的角度来说，iOS应用不需要做任何改动就可以同时映射这两种JSON。如果返回完全的JSON，对象就会被完全填充；如果返回不完全的JSON，对象就会被部分填充。</p>
+<ol>
+<li>嵌套JSON对象</li>
+</ol>
+<p>以递归的方式进行映射：可以通过setValue:forKey:方法进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-(void)setValue:(id)value forKey:(NSString *)key&#123;</div><div class="line">if([key isEqualToString:@&quot;reviews&quot;])&#123;</div><div class="line">    for(NSMutableDictionary *reviewArrayDict in value)&#123;</div><div class="line">        Review *thisReview = [[Review alloc] initWithDictionary:reviewArrayDict];</div><div class="line">        [self.reviews addObject:thisReview];</div><div class="line">    &#125;</div><div class="line">&#125;else&#123;</div><div class="line">    [super setValue:value forKey:key];</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>错误处理 （在iOS客户端优雅的处理服务器端错误）</li>
+</ol>
+<p>在某些情况下，可以使用一个特殊的键来传递错误信息，比如status。在另外一些情况下，服务器会使用一个名为error的键来传递更多的真实错误信息。如果API调用成功则没有这个error键。</p>
+<p>可以用MKNetworkOperation子类处理自定义API错误，步骤如下：<br>(1)创建一个名为RESTfulOperation的MKNetworkOperation子类。这个子类有一个属性用于保存服务器抛出的业务逻辑错误。<br>(2)在子类中创建一个名为restError的NSError*属性<br>(3)覆盖两个用于处理错误情况的方法。首先覆盖operationFailedWithError:方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">-(void) operationFailedWithError:(NSError *)theError</div><div class="line">&#123;</div><div class="line">NSMutableDictionary *errorDict = [[self responseJSON] objectForKey:@&quot;error&quot;];</div><div class="line"></div><div class="line">if(errorDict == nil)</div><div class="line">&#123;</div><div class="line">self.restError = [[RESTError alloc] initWithDomain:kRequestErrorDomain </div><div class="line">code:[theError code]</div><div class="line">userInfo:[theError userInfo]];</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">self.restError = [[RESTError alloc] initWithDomain:kBusinessErrorDomain </div><div class="line">code:[[errorDict objectForKey:@&quot;code&quot;] intValue]</div><div class="line">userInfo:errorDict];    </div><div class="line">&#125;</div><div class="line"></div><div class="line">[super operationFailedWithError:theError];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>并不是每一个业务逻辑错误都能被映射为等价的HTTP错误代码。为了能够处理这两种情况，还需要覆盖operationSucceeded:方法，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (void)operationSucceeded</div><div class="line">&#123;  </div><div class="line">// even when request completes without a HTTP Status code, it might be a benign error</div><div class="line"></div><div class="line">NSMutableDictionary *errorDict = [[self responseJSON] objectForKey:@&quot;error&quot;];</div><div class="line"></div><div class="line">if(errorDict)</div><div class="line">&#123;</div><div class="line">self.restError = [[RESTError alloc] initWithDomain:kBusinessErrorDomain </div><div class="line">code:[[errorDict objectForKey:@&quot;code&quot;] intValue]</div><div class="line">userInfo:errorDict];</div><div class="line">[super operationFailedWithError:self.restError];</div><div class="line">&#125;</div><div class="line">else </div><div class="line">&#123;		</div><div class="line">[super operationSucceeded];</div><div class="line">&#125;	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这些方法都使用子类请求对象的resetError属性保存业务逻辑错误。这样一来，客户端就既可以处理HTTP错误(使用RESTfulOperation父类的错误对象)又能处理业务层错误(使用局部属性restError)</p>
+<p>由于这些是在子类中完成的，所以RESTfulEngine类不需要做任何额外的错误处理。不管是HTTP错误还是业务逻辑错误，RESTfulEngine得到的都是一个封装好的NSError对象。在视图控制器的实现中只需要检查err是否为nil就可以了。</p>
+<ol>
+<li>本地化</li>
+</ol>
+<p>在某些实现中需要用多种语言对错误信息进行本地化。对于服务器相关的错误，显示本地化错误的最好办法就是在发生错误时，返回双方一致同意的错误代码。iOS客户端根据错误代码查找本地化字符串文件，然后显示相应的错误信息。</p>
+<p>RESTError.m<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">+ (void) initialize</div><div class="line">&#123;</div><div class="line">//不同的地方加载不同的文件。  Errors_en_US.plist Errors_zh_CN.plist</div><div class="line">NSString *fileName = [NSString stringWithFormat:@&quot;Errors_%@&quot;, [[NSLocale currentLocale] localeIdentifier]];</div><div class="line">NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@&quot;plist&quot;];</div><div class="line"></div><div class="line">if(filePath != nil)</div><div class="line">&#123;</div><div class="line">errorCodes = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];	</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;		</div><div class="line">// fall back to english for unsupported languages</div><div class="line">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;Errors_en_US&quot; ofType:@&quot;plist&quot;];</div><div class="line">errorCodes = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];			</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>覆盖NSError的localizedDescription和localizedRecoverySuggestion方法，以提供易懂的处理处理方法。如果Web服务在返回错误代码的同时也返回了错误信息，使用这种方式处理和显示错误信息比使用userInfo字典显示服务器错误信息更好。</p>
+<ol>
+<li>在iOS中提升性能的小技巧</li>
+</ol>
+<p>与Web应用不同，iPhone应用的带宽非常有限。</p>
+<p>大部分服务器都不允许同一个IP出现6个以上的并发HTTP请求？</p>
+<ol>
+<li>缓存</li>
+</ol>
+<p>按需缓存：把从服务器获取的内容以某种格式存放在本地文件系统之后对于每次请求，检查缓存中是否存在这块数据，只有当数据不存在(或者过期)的情况下才从服务器获取。而预缓存是把内容放在本地以备将来访问。</p>
+<p>实现预缓存可能需要一个后台线程访问数据并以有意义的格式保存，以便本地缓存无需重新连接服务器即可被编辑。编辑可能是”标记记录为已读”或”加入收藏”。这里有意义的格式是指可以用多种格式保存内容，不用和服务器通信就可以在本地作出上面提到的更改，并且一旦再次连上网就可以把变更发送回服务器。Core Data是实现这种储存的一种方式。</p>
+<p>按需缓存可以通过在打开一个视图控制器时按需地缓存数据模型(创建一个数据模型缓存)来实现。也可以在一个URL请求返回成功应答时实现按需缓存（创建一个URL缓存）。</p>
+<p>选择使用按需缓存还是预缓存的一个简便方法是判断是否需要在下载数据之后处理数据。后期处理数据可能是以用户产生编辑的形式，也可能是更新下载的数据，比如重写HTML页面里的图片链接以指向本地的缓存图片。如果一个应用需要做上面提到的任何后期处理，就必须实现预缓存。</p>
+<p>13.1 存储缓存<br>因为缓存数据不是用户产生的，所以它应该被保存在NSCacheDirectory,而不是NSDocumentsDirectory.为缓存数据创建独立目录是一项不错的实践。可以这样创建：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">NSArray *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES);</div><div class="line">NSString* cachesDirectory = [path objectAtIndex:0];</div><div class="line">cachesDirectory = [cachesDirectory stringByAppendingPathComponent:@&quot;MyAppCache&quot;];</div></pre></td></tr></table></figure></p>
+<p>把缓存存储在缓存文件夹下的原因是iCloud(和iTunes)的备份不包括此目录。</p>
+<p>预缓存是高级数据库(比如原始的SQLite)或者对象序列化框架(比如Core Data)实现的。</p>
+<p>数据模型缓存实现细节：</p>
+<p>可以用NSKeyedArchiver类来实现数据模型的缓存。为了把模型对象用NSKeyedArchiver归档。模型类需要遵守NSCoding协议。</p>
+<p>NSCoding协议方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)encodeWithCoder:(NSCoder *)aCoder;</div><div class="line">- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder;</div></pre></td></tr></table></figure></p>
+<p>当模型遵守了NSCoding协议，归档对象就很简单，只要调用下列方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//制定的路径下创建归档文件</div><div class="line">[NSKeyedArchiver archiveRootObject: toFile:];</div></pre></td></tr></table></figure></p>
+<p>使用NSKeyedUnarchiver用于从文件反归档模型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[NSKeyedUnarchiver unarchiveObjectWithFile:];</div></pre></td></tr></table></figure></p>
+<p>使用任何NSKeyedArchiver/NSkeyedUnarichiver的前提是模型实现了NSCoding协议。</p>
+<p>预缓存： 预缓存需要用到更结构化的数据结构。<br>Core Data：<br>Core Data更像是一个对象序列化框架，而不仅仅是一个数据库API。<br>要在Core data中保存数据，首先需要创建一个Core Data模型文件，并创建实体(Entity)和关系(Relationship); 然后写好保存和获取数据的方法。应用可以借助Core Data实现真正的离线访问功能。就像苹果内置的邮件和日历应用一样。实现预缓存时必须定期删除不再需要的(过时的)数据。👉同步本地变更是通过追踪变更集并发送给服务器实现的。</p>
+<p>用Core Data实现按需缓存</p>
+<p>原始SQLite<br>可以通过链接libsqlite3的库来把SQLite嵌入应用，但是这么做有很大的缺陷。所有的sqlite3库和对象关系映射(ORM)机制总是比Core Data慢。此外，尽管sqlite3本身是线程安全的，但是iOS的二进制包则不是。所以除非是定制编译的sqlite3库(用线程安全的编译参数编译)，否则开发者就有责任确保从sqlite3读取数据或者往sqlite3写入数据是线程安全的。Core Data有这么多特性而且内置线程安全，建议在iOS中尽量避免使用sqlite。<br>应该用那种缓存技术</p>
+<p>在众多可以本地缓存数据的技术当中，有三种可以脱颖而出：URL缓存、数据模型缓存(利用NSKeyedArchiver)和Core Data。</p>
+<p>假设你正在开发一个应用，需要缓存数据以改善应用表现出来的性能，你应该实现按需缓存(使用数据模型缓存或URL缓存)。另一方面，如果需要数据能够离线缓存，而且具有合理的存储方式以便离线编辑，那么就用高级序列化技术(如Core Data)<br>数据模型缓存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">- (void)encodeWithCoder:(NSCoder *)encoder </div><div class="line">&#123;</div><div class="line">[encoder encodeObject:self.itemId forKey:@&quot;itemId&quot;];</div><div class="line">[encoder encodeObject:self.image forKey:@&quot;image&quot;];</div><div class="line">[encoder encodeObject:self.name forKey:@&quot;name&quot;];</div><div class="line">[encoder encodeObject:self.spicyLevel forKey:@&quot;spicyLevel&quot;];</div><div class="line">[encoder encodeObject:self.rating forKey:@&quot;rating&quot;];</div><div class="line">[encoder encodeObject:self.itemDescription forKey:@&quot;itemDescription&quot;];</div><div class="line">[encoder encodeObject:self.waitingTime forKey:@&quot;waitingTime&quot;];</div><div class="line">[encoder encodeObject:self.reviewCount forKey:@&quot;reviewCount&quot;];</div><div class="line">[encoder encodeObject:self.reviews forKey:@&quot;reviews&quot;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (id)initWithCoder:(NSCoder *)decoder </div><div class="line">&#123;</div><div class="line">self = [super init];</div><div class="line">if (self) &#123;</div><div class="line">self.itemId = [decoder decodeObjectForKey:@&quot;itemId&quot;];</div><div class="line">self.image = [decoder decodeObjectForKey:@&quot;image&quot;];</div><div class="line">self.name = [decoder decodeObjectForKey:@&quot;name&quot;];</div><div class="line">self.spicyLevel = [decoder decodeObjectForKey:@&quot;spicyLevel&quot;];</div><div class="line">self.rating = [decoder decodeObjectForKey:@&quot;rating&quot;];</div><div class="line">self.itemDescription = [decoder decodeObjectForKey:@&quot;itemDescription&quot;];</div><div class="line">self.waitingTime = [decoder decodeObjectForKey:@&quot;waitingTime&quot;];</div><div class="line">self.reviewCount = [decoder decodeObjectForKey:@&quot;reviewCount&quot;];</div><div class="line">self.reviews = [decoder decodeObjectForKey:@&quot;reviews&quot;];</div><div class="line">&#125;</div><div class="line">return self;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在viewWillApear：方法中实现实际的缓存逻辑</p>
+<p>视图控制器的viewWillApear:方法中缓存恢复数据模型对象的代码片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">NSArray *path = NSSearchPathForDirectoriesInDomians(NSCachesDirectory,NSUserDomianMask,YES);</div><div class="line">NSString *cachesDirectory = [path objectAtIndex:0];</div><div class="line">//拼接路径</div><div class="line">NSString *archivePath =  [cachesDirectory stringByAppendingPathComponent:@&quot;AppCache/MenuItems.archive&quot;];</div><div class="line">//尝试反归档</div><div class="line">NSMutableArray *cachedItems = [NSKeyedUnarchiver unarchiveObjectWithFile:archivePath];</div><div class="line">if(cachedItems == nil)</div><div class="line">    self.menuItems = [AppDelegate.engine localMenuItems];</div><div class="line">else</div><div class="line">    self.menuItems = cachedItems;</div><div class="line">//在这里决定要不要更新</div><div class="line">NSTimeInterval stalenessLevel = [[[[NSFileManager defaultManager] attributesOfItemAtPath:archivePath error:nil] fileModificationDate] timeIntervalSinceNow];</div><div class="line">if(stalenessLevel &gt; THRESHOLD)</div><div class="line">    self.menuItems = [AppDelegate.engine localMenuItems];</div><div class="line"></div><div class="line">[self updateUI];</div></pre></td></tr></table></figure></p>
+<p>视图控制器的viewWillDisappear：方法中缓存数据模型的代码片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSArray *paths = NSSearchPathForDirectoriesInDomains(NSChchesDirectory,NSUserDomainMask,YES);</div><div class="line">NSString *cachesDirectory = [paths objectAtIndex:0];</div><div class="line">NSString *archivePath = [cachesDirectory stringByAppendingPathComponent:@&quot;AppCache/MenuItems.archive&quot;];</div><div class="line">[NSKeyedArchiver archiveRootObject:self.menuItems toFile:archivePath];</div></pre></td></tr></table></figure></p>
+<p>重构<br>当有多个视图控制器的时候，这样的代码就显得冗杂。可以通过抽象公共类作为处理缓存的核心代码。</p>
+<p>视图控制器viewWillApear:方法中用AppCache类缓存数据模型的重构代码片段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">-(void)viewWillApear:(BOOL)animated&#123;</div><div class="line">self.menItems = [AppCache getCachedMenuItems];</div><div class="line">[self.tableView reloadData];</div><div class="line">//如果超过了缓存期限或者根本就没有缓存</div><div class="line">if([AppCache isMenuItemsStale] || self.menuItems)&#123;</div><div class="line">    //发送网络请求</div><div class="line">&#125;</div><div class="line">[super viewWillAppear:animated];</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(void)viewWillDisappear:(BOOL)animated&#123;</div><div class="line">[AppCache cacheMenuItems:self.menuItems];</div><div class="line">[super viewWillDisappear:animated];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>开发者可以通过为每个用户创建子目录即可轻松增强缓存数据的安全性。更改缓存目录为返回当前登录用户的子目录。这样，一个用户缓存的数据就不会被随后登录的用户看见了。</p>
+<p>缓存版本控制</p>
+<p>当你更新应用时，模型类可能会发生变化，这意味着之前归档的任何数据都将不能恢复到新的模型上。如何在版本升级时删除缓存目录？：<br>使缓存失效<br>AppCache 中缓存版本的初始化方法(AppCache.m)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">+(void)initialize&#123;</div><div class="line">    //获得拼接的路径</div><div class="line">    NSString *cacheDirectory = [AppCache cacheDirectory];</div><div class="line">    if(![[NSFileManager defaultManager] fileExistsAtPath:cacheDirectory])&#123;</div><div class="line">        [[NSFileManager defaultManager] createDirectoryAtPath:cacheDirectory withIntermediateDirectories:YES attributes:nil error:nil];</div><div class="line">    &#125;</div><div class="line">    double lastSavedCacheVersion = [[NSUserDefaults standardUserDefaults] doubleForKey:@&quot;CACHE_VERSION&quot;];</div><div class="line">    double currentAppVersion = [[AppCache appVersion] doubleValue];</div><div class="line">if(lastSavedCacheVersion == 0.0f || lastSavedCacheVersion &lt; lastSavedCacheVersion)&#123;</div><div class="line">        [AppCache clearCache];</div><div class="line">    //把版本号存储在设备中</div><div class="line">    ...</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>也可以用下面这段代码从应用的Info.plist中读取版本号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">+(NSString *)appVersion&#123;</div><div class="line">CFStringRef versStr = CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey);</div><div class="line">NSString *version = [NSString stringWithUTF8String:CFStringGetCStringPtr(versStr, kCFStringEncodingMacRoman)];</div><div class="line">return version;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>clearCache方法具体实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">+(void)clearCache&#123;</div><div class="line">NSArray *cachedItems = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[AppCache cacheDirectory] error:nil];</div><div class="line">for (NSString *path in cachedItems) &#123;</div><div class="line">[[NSFileManager defaultManager] removeItemAtPath:path error:nil];</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建内存缓存：</p>
+<p>需要避免过于频繁的读写闪存。为了避免这个问题，我们可以再引入一层缓存，利用设备的RAM而不是闪存(用NSMutableDictionry)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/25/幕后制作：-后台处理/" rel="next" title="幕后制作： 后台处理">
+                <i class="fa fa-chevron-left"></i> 幕后制作： 后台处理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/25/使用REST服务/"
+           data-title="使用REST服务" data-url="http://yoursite.com/2017/03/25/使用REST服务/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/IMG_0084.png"
+               alt="颠倒" />
+          <p class="site-author-name" itemprop="name">颠倒</p>
+           
+              <p class="site-description motion-element" itemprop="description">立志做一个屌丝</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">颠倒</span>
+</div>
+
+
+<div class="powered-by">
+   碎碎念 
+</div>
+
+<div class="theme-info">
+  个人专属博客 不能摆脱本能的男人算不上男子汉
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tcjing"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
