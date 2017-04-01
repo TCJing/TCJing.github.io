@@ -292,6 +292,165 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/利用Runtime更改pop手势范围/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="颠倒">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/IMG_0084.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颠倒碎碎念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/利用Runtime更改pop手势范围/" itemprop="url">
+                  利用Runtime更改pop手势范围
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T00:04:47+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/11/利用Runtime更改pop手势范围/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/利用Runtime更改pop手势范围/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          思路： 1.导航控制器提供了interactivePopGestureRecognizer属性，这个属性就是控制pop控制器滑动的手势。而系统提供的滑动操作只能是屏幕边缘触发滑动，而有的时候，我们需要提供全屏滑动的效果。所以，开始寻求办法：
+2.这个interactivePopGestureRecognizer手势，一定会触发方法来完成转场动画，以及控制转场进度。无论是通过边缘滑动，还是通过全屏幕滑动触发方法的调用，其触发的方法的内部实现原理和产生效果都是一样的，不同的是其手势的作用范围。那么，系统已经提供了手势触发后所调用的方法，我们就可以直接来使用这个方法，我们只是自定义一个手势，来调用这个现成的方法即可。
+1.试图寻求在手势对象的内部有没有成员属性类似于target和action。
+通过运行时来打印出手势所有的成语属性和属性类型：1234567891011unsigned int count;Ivar *ivars = class_copyIvarList([UIGestureRecognizer class], &amp;count);for (int i = 0; i &lt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/11/利用Runtime更改pop手势范围/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/10/OC消息转发/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1720,166 +1879,6 @@ reload()定义和用法reload() 方法用于重新加载当前文档。如果该
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/04/URL-Scheme/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="颠倒">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/IMG_0084.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="颠倒碎碎念">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/04/URL-Scheme/" itemprop="url">
-                  URL Scheme
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T19:01:57+08:00">
-                2017-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/04/URL-Scheme/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/04/URL-Scheme/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          URL Scheme经常使用的地方有:APP间跳转,服务器通知客户端的跳转以及H5与Naative跳转
-scheme三方面的作用:
-服务器下发跳转路径,客户端根据服务器发送的跳转路径进行跳转H5页面点击锚点根据锚点具体跳转路径APP端跳转具体的页面APP端收到服务器端下发的PUSH通知栏消息,根据消息的跳转路径,跳转相关页面
-URL Scheme 概述客户端应用可以向操作系统注册一个 URL scheme，该 scheme 用于从浏览器或其他应用中启动本应用。通过指定的 URL 字段，可以让应用在被调起后直接打开某些特定页面，比如车辆详情页、订单详情页、消息通知页、促销广告页等等。也可以执行某些指定动作，如订单支付等。也可以在应用内通过 html 页来直接调用显示 app 内的某个页面。
-URL scheme 的格式客户端自定义的 URL 作为从一个应用调用另一个的基础，遵循 RFC 1808 (Relative Uniform Resource Locators) 标准。这跟我们常见的网页内容 URL 格式一样。一个普通的 URL 分为几个部分，scheme、host、relativ
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/04/URL-Scheme/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1929,7 +1928,7 @@ URL scheme 的格式客户端自定义的 URL 作为从一个应用调用另一�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

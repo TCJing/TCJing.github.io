@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,demo," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,19 +87,36 @@
 
 
 
-<meta name="description" content="彩虹渐变的滚动列表">
+<meta name="description" content="曾经需要用底层的Core Text才能做的高级布局现在可以直接用UIKit处理了。
+理解富文本
+
+字符与字形
+
+NSString 是字符集合，每个字符用一个唯一的Unicode值表示。
+任何的”我”出现在字符串中，其数值都是一样的。下面这张图，每个”我”的字符值都是一样的，但它们的形状却大不相同,这些形状被称为字形">
 <meta property="og:type" content="article">
-<meta property="og:title" content="彩虹渐变的滚动列表">
-<meta property="og:url" content="http://yoursite.com/2017/03/09/彩虹渐变的滚动列表/index.html">
+<meta property="og:title" content="精妙的文本布局">
+<meta property="og:url" content="http://yoursite.com/2017/04/01/精妙的文本布局/index.html">
 <meta property="og:site_name" content="颠倒碎碎念">
-<meta property="og:description" content="彩虹渐变的滚动列表">
-<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/2017-03-09%2019_48_56.gif">
-<meta property="og:image" content="http://om86drpkf.bkt.clouddn.com/2017-03-09%2019_50_42.gif">
-<meta property="og:updated_time" content="2017-03-09T12:04:06.000Z">
+<meta property="og:description" content="曾经需要用底层的Core Text才能做的高级布局现在可以直接用UIKit处理了。
+理解富文本
+
+字符与字形
+
+NSString 是字符集合，每个字符用一个唯一的Unicode值表示。
+任何的”我”出现在字符串中，其数值都是一样的。下面这张图，每个”我”的字符值都是一样的，但它们的形状却大不相同,这些形状被称为字形">
+<meta property="og:image" content="http://onq3jxzl1.bkt.clouddn.com/Snip20170401_1.png">
+<meta property="og:updated_time" content="2017-04-01T09:14:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="彩虹渐变的滚动列表">
-<meta name="twitter:description" content="彩虹渐变的滚动列表">
-<meta name="twitter:image" content="http://om86drpkf.bkt.clouddn.com/2017-03-09%2019_48_56.gif">
+<meta name="twitter:title" content="精妙的文本布局">
+<meta name="twitter:description" content="曾经需要用底层的Core Text才能做的高级布局现在可以直接用UIKit处理了。
+理解富文本
+
+字符与字形
+
+NSString 是字符集合，每个字符用一个唯一的Unicode值表示。
+任何的”我”出现在字符串中，其数值都是一样的。下面这张图，每个”我”的字符值都是一样的，但它们的形状却大不相同,这些形状被称为字形">
+<meta name="twitter:image" content="http://onq3jxzl1.bkt.clouddn.com/Snip20170401_1.png">
 
 
 
@@ -127,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/09/彩虹渐变的滚动列表/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/01/精妙的文本布局/"/>
 
 
 
 
 
-  <title> 彩虹渐变的滚动列表 | 颠倒碎碎念 </title>
+  <title> 精妙的文本布局 | 颠倒碎碎念 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -294,7 +311,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/彩虹渐变的滚动列表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/精妙的文本布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="颠倒">
@@ -315,7 +332,7 @@
             
             
               
-                彩虹渐变的滚动列表
+                精妙的文本布局
               
             
           </h1>
@@ -330,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T19:46:15+08:00">
-                2017-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T16:39:48+08:00">
+                2017-04-01
               </time>
             
 
@@ -371,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/09/彩虹渐变的滚动列表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/彩虹渐变的滚动列表/" itemprop="commentCount"></span>
+                <a href="/2017/04/01/精妙的文本布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/01/精妙的文本布局/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,8 +415,13 @@
       
 
       
-        <p><div style="text-align: center">彩虹渐变的滚动列表</div><br><a id="more"></a><br><a href="http://www.jianshu.com/p/d53dcef7c0f2" target="_blank" rel="external">原文链接</a></p>
-<p><img src="http://om86drpkf.bkt.clouddn.com/2017-03-09%2019_48_56.gif"><br><img src="http://om86drpkf.bkt.clouddn.com/2017-03-09%2019_50_42.gif"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line">#import &quot;ViewController.h&quot;</div><div class="line"></div><div class="line">@interface ViewController()&lt;UITableViewDelegate,UITableViewDataSource&gt;</div><div class="line">//数组用来存储起始颜色和终点颜色</div><div class="line">&#123;</div><div class="line">NSArray *_color;</div><div class="line">&#125;</div><div class="line">@property(nonatomic,strong) UITableView  *tableView;</div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line">[super viewDidLoad];</div><div class="line">//存储颜色变化的起始值和终值</div><div class="line">self-&gt;_color = @[[UIColor colorWithRed:0.85 green:0 blue:0.09 alpha:1],[UIColor colorWithRed:0.9 green:0.56 blue:0.11 alpha:1]];</div><div class="line"></div><div class="line">self.view.backgroundColor = [UIColor blackColor];</div><div class="line">self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];</div><div class="line">self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;</div><div class="line">self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);</div><div class="line">self.tableView.delegate =self;</div><div class="line">self.tableView.dataSource = self;</div><div class="line"></div><div class="line">UIVisualEffectView *veView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];</div><div class="line">veView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 20);</div><div class="line">[self.view addSubview:self.tableView];</div><div class="line">[self.view addSubview:veView];</div><div class="line"></div><div class="line">&#125;</div><div class="line">//创建的UIColor对象无法再获取到其中的颜色组件，将这里的颜色数组作为参数传入，这样通过这个方法可获得在任何颜色设定基础上的对应颜色</div><div class="line">-(UIColor *)calculateColorWithProgress:(float)progress usingColors:(NSArray&lt;UIColor *&gt;*)colors&#123;</div><div class="line">UIColor *color1 = [colors firstObject];</div><div class="line">UIColor *color2 = [colors lastObject];</div><div class="line">// UIColor -&gt; CGColor</div><div class="line">const CGFloat *color1Components = CGColorGetComponents(color1.CGColor);</div><div class="line">const CGFloat *color2Components = CGColorGetComponents(color2.CGColor);</div><div class="line">// 这里从终点值到初始值的差值 * progress = 【0 - 差值】</div><div class="line">float red =  color1Components[0] + (color2Components[0] - color1Components[0]) * progress;</div><div class="line">float green =  color1Components[1] + (color2Components[1] - color1Components[1]) * progress;</div><div class="line">float blue =  color1Components[2] + (color2Components[2] - color1Components[2]) * progress;</div><div class="line">return [UIColor colorWithRed:red green:green blue:blue alpha:1];</div><div class="line">&#125;</div><div class="line">-(float)calculateProgressWithView:(UIView *)view&#123;</div><div class="line">//converRect: toView: 转换坐标系</div><div class="line">//从相对于tableView的坐标系 转换到view上去</div><div class="line">CGRect convertedRect = [view convertRect:view.bounds toView:self.view];</div><div class="line">CGFloat convertedY = convertedRect.origin.y;</div><div class="line">//[0 - 1]</div><div class="line">return  convertedY / (self.view.bounds.size.height - 60);</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(UITableViewCell *)makeTableViewCell&#123;</div><div class="line">UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@&quot;Cell&quot;];</div><div class="line">cell.selectionStyle = UITableViewCellSeparatorStyleNone;</div><div class="line">cell.textLabel.font = [UIFont boldSystemFontOfSize:16];</div><div class="line">cell.textLabel.textColor = [UIColor whiteColor];</div><div class="line">//设置文字的阴影</div><div class="line">cell.textLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];</div><div class="line">cell.textLabel.shadowOffset = CGSizeMake(0, 1);</div><div class="line">//下面的两个 CAShapeLayer 主要是为了实现高光阴影的效果，也就是这个 cell 的上边有一条亮边，下边有层阴影</div><div class="line">CAShapeLayer *topHighlightLayer = [CAShapeLayer layer];</div><div class="line">topHighlightLayer.path = CGPathCreateWithRect(CGRectMake(0, 0, self.view.bounds.size.width, 1), nil);</div><div class="line">topHighlightLayer.fillColor = [UIColor whiteColor].CGColor;</div><div class="line">topHighlightLayer.opacity = 0.1;</div><div class="line">[cell.layer addSublayer:topHighlightLayer];</div><div class="line"></div><div class="line">CAShapeLayer *bottomShadowLayer = [CAShapeLayer layer];</div><div class="line">bottomShadowLayer.path = CGPathCreateWithRect(CGRectMake(0, 59, self.view.bounds.size.width, 1), nil);</div><div class="line">bottomShadowLayer.fillColor = [UIColor blackColor].CGColor;</div><div class="line">bottomShadowLayer.opacity = 0.2;</div><div class="line">[cell.layer addSublayer:bottomShadowLayer];</div><div class="line"></div><div class="line">return cell;</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section&#123;</div><div class="line">return 30;</div><div class="line">&#125;</div><div class="line">-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath&#123;</div><div class="line">static NSString *CellIdentifiter = @&quot;Cell&quot;;</div><div class="line">UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifiter];</div><div class="line">if (!cell) &#123;</div><div class="line">    cell = [self makeTableViewCell];</div><div class="line">&#125;</div><div class="line">cell.textLabel.text = [NSString stringWithFormat:@&quot;This is test item %ld&quot;,indexPath.row];</div><div class="line">cell.detailTextLabel.text = @&quot;1&quot;;</div><div class="line">return cell;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">//需要注意的是，cell 刚创建完毕后滚动的代理方法是不会触发的</div><div class="line">//所以我们需要用到tableView:willDisplayCell:forRowAtIndexPath:这个代理方法来对每个新建的 cell 作相应设置。</div><div class="line">-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath&#123;</div><div class="line">//设置cell的背景色</div><div class="line">cell.backgroundColor = [self calculateColorWithProgress:[self calculateProgressWithView:cell] usingColors:self -&gt; _color];</div><div class="line">&#125;</div><div class="line">-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&#123;</div><div class="line">return 60;</div><div class="line">&#125;</div><div class="line">-(void)scrollViewDidScroll:(UIScrollView *)scrollView&#123;</div><div class="line">if ([scrollView isEqual:self.tableView]) &#123;</div><div class="line">    //获取所有可见的cell</div><div class="line">    [self.tableView.visibleCells enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) &#123;</div><div class="line">        float progress = [self calculateProgressWithView:obj];</div><div class="line">        UIColor *color = [self calculateColorWithProgress:progress usingColors:self -&gt; _color];</div><div class="line">        obj.backgroundColor = color;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>曾经需要用底层的Core Text才能做的高级布局现在可以直接用UIKit处理了。</p>
+<h2 id="理解富文本"><a href="#理解富文本"></a>理解富文本</h2>
+
+<h2 id="字符与字形"><a href="#字符与字形"></a>字符与字形</h2>
+
+<p>NSString 是字符集合，每个字符用一个唯一的Unicode值表示。</p>
+<p>任何的”我”出现在字符串中，其数值都是一样的。<br>下面这张图，每个”我”的字符值都是一样的，但它们的形状却大不相同,这些形状被称为字形<br><img src="http://onq3jxzl1.bkt.clouddn.com/Snip20170401_1.png"></p>
 
       
     </div>
@@ -425,8 +447,6 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/demo/" rel="tag"># demo</a>
-          
         </div>
       
 
@@ -438,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/07/巧妙运用对象关联设计alertview/" rel="next" title="巧妙运用对象关联设计alertview">
-                <i class="fa fa-chevron-left"></i> 巧妙运用对象关联设计alertview
+              <a href="/2017/04/01/开发多平台应用/" rel="next" title="开发多平台应用">
+                <i class="fa fa-chevron-left"></i> 开发多平台应用
               </a>
             
           </div>
@@ -447,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/09/UIVisualEffect-模糊动画/" rel="prev" title="UIVisualEffect 模糊动画">
-                UIVisualEffect 模糊动画 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,8 +492,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/09/彩虹渐变的滚动列表/"
-           data-title="彩虹渐变的滚动列表" data-url="http://yoursite.com/2017/03/09/彩虹渐变的滚动列表/">
+      <div class="ds-thread" data-thread-key="2017/04/01/精妙的文本布局/"
+           data-title="精妙的文本布局" data-url="http://yoursite.com/2017/04/01/精妙的文本布局/">
       </div>
     
   </div>
@@ -501,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/IMG_0084.png"
@@ -560,6 +585,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解富文本"><span class="nav-number">1.</span> <span class="nav-text">理解富文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符与字形"><span class="nav-number">2.</span> <span class="nav-text">字符与字形</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
