@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[HTML学习4.8]]></title>
       <url>%2F2017%2F04%2F08%2FHTML%E5%AD%A6%E4%B9%A04-8%2F</url>
-      <content type="text"><![CDATA[1.control + shift + k : 删除一行command + 单击： 集体输入command + / : 注释command + L :快速选中一行 不会生成空白行3.加粗4.我是歪的吗 : 倾斜标签5.1000.00: 删除标签6.下划线 : 下划线7. : title:鼠标停留在图片上时显示的文字当不写宽高的时候，以图片本身的宽高显示。如果单独的设置宽或者高，那么图片就会等比缩放8.相对路径和绝对路径相对路径：相对于文件自身出发:文件和图片在同一个目录下(文件夹)，直接写文件名图片在文件的上一级目录里，../+图片名字绝对路径：9.点击我吧？href]]></content>
+      <content type="text"><![CDATA[1.control + shift + k : 删除一行command + 单击： 集体输入command + / : 注释command + L :快速选中一行 2.1&lt;br /&gt;不会生成空白行 3.1&lt;strong&gt;加粗&lt;/strong&gt; 4.1&lt;em&gt;我是歪的吗&lt;/em&gt; : 倾斜标签 5.1&lt;del&gt;1000.00&lt;/del&gt;: 删除标签 6.1&lt;ins&gt;下划线&lt;/ins&gt; : 下划线 7.12&lt;img src=&quot;Snip20170314_1.png&quot; alt=&quot;我是显示不出来的图片&quot; title=&quot;我的男神&quot;/&gt; : title:鼠标停留在图片上时显示的文字当不写宽高的时候，以图片本身的宽高显示。如果单独的设置宽或者高，那么图片就会等比缩放 8.12345相对路径和绝对路径相对路径：相对于文件自身出发:文件和图片在同一个目录下(文件夹)，直接写文件名图片在文件的上一级目录里，../+图片名字绝对路径： 9.123&lt;a href=&quot;常用快捷键.html&quot;&gt;点击我吧？&lt;/a&gt;href: 去往哪里？src: 从哪里来？]]></content>
     </entry>
 
     
