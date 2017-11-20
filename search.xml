@@ -3,13 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[我的博客]]></title>
-      <url>%2F2017%2F11%2F20%2Ftest%2F</url>
-      <content type="text"></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[ps笔记]]></title>
       <url>%2F2017%2F04%2F22%2Fps%E7%AC%94%E8%AE%B0%2F</url>
       <content type="text"><![CDATA[图层的操作: 1.按住空格键不松，无论选择什么工具，都会切换为抓手工具来移动视图2.按住抓手工具不松，可以出现抓手工具和旋转视图工具3.在选取状态下,shift + 左键，画出正方形的选取。移动选取交点到中心位置，按住option键，按住左键，以中心位置为选取的中心点缩放]]></content>
